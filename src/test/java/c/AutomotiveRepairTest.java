@@ -1,4 +1,4 @@
-package cput;
+package c;
 
 import static org.junit.Assert.assertTrue;
 

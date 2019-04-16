@@ -1,8 +1,6 @@
 package c.Domain;
 
 
-import sun.security.provider.certpath.Builder;
-
 public class Vehicle {
 
         private String vehicleType, vehicleBrand;
@@ -12,9 +10,19 @@ public class Vehicle {
 
         }
 
-        private Vehicle(Builder builder ){
+        private Vehicle(Builder builder){
 
             this.vehicleBrand = builder.vehicleBrand;
+            this.vehicleType = builder.vehicleType;
+
+        }
+
+        public static class Builder{
+
+
+
+
+
         }
 
 
