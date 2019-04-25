@@ -1,6 +1,4 @@
-package c.Factory;
+package c.Factory.service;
 
 public class PartsFactory {
-
-
 }
