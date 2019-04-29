@@ -39,6 +39,7 @@ public class Qualification {
         return qualificationDuration;
     }
 
+
     public static class Builder{
 
         private int qualificationID;
@@ -51,6 +52,44 @@ public class Qualification {
 
             this.qualificationID = qualificationID;
             return this;
+
+        }
+
+        public Builder qualificationName(String qualificationName){
+
+            this.qualificationName = qualificationName;
+            return this;
+
+        }
+
+        public Builder instituteName(String instituteName){
+
+            this.instituteName = instituteName;
+            return this;
+
+        }
+
+        public Builder qualificationDuration(String qualificationDuration){
+
+            this.qualificationDuration = qualificationDuration;
+            return this;
+
+        }
+
+        public Qualification build(){
+
+            return new Qualification(this);
+
+        }
+
+        @Override
+        public String toString(){
+
+            return "Qualification\n" +
+                    "QualificationID: " + qualificationID
+                    + "\nQualification name: " + qualificationName
+                    + "\nInstitution: " + instituteName
+                    + "\nDuration: " + qualificationDuration;
 
         }
 
