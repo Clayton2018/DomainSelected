@@ -59,7 +59,12 @@ public class Equipment {
         }
 
         @Override
-        public String toString
+        public String toString(){
+
+            return "Equipment\n" + "ID: " + equipNum
+                    + "\n" + "Name: " + equipName;
+
+        }
 
     }
 
