@@ -1,4 +1,13 @@
 package c.service.employee;
 
-public class MechanicService {
+import c.domain.employee.Mechanic;
+import c.service.Service;
+import com.sun.xml.internal.bind.v2.model.core.ID;
+
+import java.util.Set;
+
+public interface MechanicService extends Service<Mechanic, ID> {
+
+    Set<Mechanic>getAll();
+
 }
