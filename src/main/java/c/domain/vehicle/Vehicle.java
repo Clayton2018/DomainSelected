@@ -135,6 +135,13 @@ public abstract class Vehicle {
 
         }
 
+        public Builder mileage(int mileage){
+
+            this.mileage = mileage;
+            return this;
+
+        }
+
         public String toString(){
 
             return "Vehicle \n" + "manufacturer: " + manufacturer
@@ -146,12 +153,6 @@ public abstract class Vehicle {
 
         }
 
-
-
-
-
     }
-
-
 
 }

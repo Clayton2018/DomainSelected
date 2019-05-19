@@ -1,12 +1,14 @@
 package c.domain.VehicleService;
 
 import c.domain.customer.Customer;
+import c.domain.vehicle.Vehicle;
 
 public class Service {
 
 
      private int serviceID;
      private String serviceDate, serviceDescription;
+     private Vehicle vehicle;
      private Customer customer;
 
 
@@ -27,23 +29,49 @@ public class Service {
         return serviceID;
     }
 
+    public void setServiceID(int serviceID) {
+        this.serviceID = serviceID;
+    }
+
     public String getServiceDate() {
         return serviceDate;
+    }
+
+    public void setServiceDate(String serviceDate) {
+        this.serviceDate = serviceDate;
     }
 
     public String getServiceDescription() {
         return serviceDescription;
     }
 
+    public void setServiceDescription(String serviceDescription) {
+        this.serviceDescription = serviceDescription;
+    }
+
     public Customer getCustomer() {
         return customer;
     }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+
+    public Vehicle getVehicle() {
+        return vehicle;
+    }
+
+    public void setVehicle(Vehicle vehicle) {
+        this.vehicle = vehicle;
+    }
+
 
     public static class Builder{
 
         private int serviceID;
         private String serviceDate, serviceDescription;
         private Customer customer;
+        private Vehicle vehicle;
 
 
         public Builder serviceID(int serviceID){
@@ -74,6 +102,13 @@ public class Service {
 
         }
 
+        public Builder vehicle(Vehicle vehicle){
+
+            this.vehicle = vehicle;
+            return this;
+
+        }
+
         public Service build(){
 
             return new Service(this);
@@ -84,7 +119,8 @@ public class Service {
 
             return "Service \n" + "Service ID: " + serviceID
                     + "\n" + "Date: " + serviceDate + "\nDescription: "
-                    + serviceDescription + "\nCustomer: " + customer;
+                    + serviceDescription + "\nVehicle: " + vehicle
+                    + "\nCustomer: " + customer;
 
         }
 
