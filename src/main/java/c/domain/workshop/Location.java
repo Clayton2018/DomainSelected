@@ -26,6 +26,14 @@ public class Location extends Workshop {
         return areaName;
     }
 
+    public void setAreaCode(int areaCode) {
+        this.areaCode = areaCode;
+    }
+
+    public void setAreaName(String areaName) {
+        this.areaName = areaName;
+    }
+
     public static class Builder{
 
          private int areaCode;
