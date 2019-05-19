@@ -1,7 +1,6 @@
-package c.domain.service;
+package c.domain.VehicleService;
 
 import c.domain.customer.Customer;
-import javafx.util.Builder;
 
 public class Service {
 
