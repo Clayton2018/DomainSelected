@@ -6,7 +6,10 @@ public class AdministratorFactory {
 
     public static Administrator getAdministrator(int empId, String type){
 
-        return (Administrator) new Administrator().AdminBuilder().
+        return (Administrator) new Administrator.AdminBuilder()
+                .type(type)
+                //.empID(empId)
+                .build();
 
     }
 

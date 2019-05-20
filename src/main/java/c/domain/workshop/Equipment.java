@@ -2,6 +2,8 @@ package c.domain.workshop;
 
 import c.domain.customer.Customer;
 
+import java.util.Objects;
+
 public class Equipment {
 
     private int equipNum;
@@ -66,6 +68,19 @@ public class Equipment {
 
         }
 
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+            EquipmentBuilder that = (EquipmentBuilder) o;
+            return equipNum == that.equipNum &&
+                    equipName.equals(that.equipName);
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(equipNum, equipName);
+        }
     }
 
 }
