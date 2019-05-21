@@ -3,7 +3,9 @@ package c.domain.VehicleService;
 import c.domain.customer.Customer;
 import c.domain.vehicle.Vehicle;
 
-public class Service {
+import java.util.Objects;
+
+public abstract class VehicleService {
 
 
      private int serviceID;
@@ -12,11 +14,11 @@ public class Service {
      private Customer customer;
 
 
-    public Service(){
+    public VehicleService(){
 
     }
 
-    public Service(Builder builder){
+    public VehicleService(Builder builder){
 
         this.serviceID = builder.serviceID;
         this.serviceDate = builder.serviceDate;
@@ -66,7 +68,7 @@ public class Service {
     }
 
 
-    public static class Builder{
+    public static abstract class Builder{
 
         private int serviceID;
         private String serviceDate, serviceDescription;
@@ -109,21 +111,33 @@ public class Service {
 
         }
 
-        public Service build(){
-
-            return new Service(this);
-
-        }
+        public abstract VehicleService build();
 
         public String toString(){
 
-            return "Service \n" + "Service ID: " + serviceID
+            return "VehicleService \n" + "VehicleService ID: " + serviceID
                     + "\n" + "Date: " + serviceDate + "\nDescription: "
                     + serviceDescription + "\nVehicle: " + vehicle
                     + "\nCustomer: " + customer;
 
         }
 
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+            Builder builder = (Builder) o;
+            return serviceID == builder.serviceID &&
+                    serviceDate.equals(builder.serviceDate) &&
+                    serviceDescription.equals(builder.serviceDescription) &&
+                    customer.equals(builder.customer) &&
+                    vehicle.equals(builder.vehicle);
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(serviceID, serviceDate, serviceDescription, customer, vehicle);
+        }
     }
 
 }
