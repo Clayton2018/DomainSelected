@@ -3,7 +3,6 @@ package c.service.employee.impl;
 import c.domain.employee.Mechanic;
 import c.repositories.employees.MechanicRepository;
 import c.service.employee.MechanicService;
-import com.sun.xml.internal.bind.v2.model.core.ID;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
@@ -35,7 +34,7 @@ public class MechanicServiceImpl implements MechanicService {
 
     @Override
     public Set<Mechanic> getAll() {
-        return null;
+        return repository.getAll();
     }
 
     @Override

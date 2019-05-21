@@ -6,7 +6,7 @@ import com.sun.xml.internal.bind.v2.model.core.ID;
 
 import java.util.Set;
 
-public interface DriverService extends Service<Driver, ID> {
+public interface DriverService extends Service<Driver, Integer> {
 
      Set<Driver> getAll();
 
