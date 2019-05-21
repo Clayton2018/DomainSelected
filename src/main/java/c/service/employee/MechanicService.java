@@ -6,7 +6,7 @@ import com.sun.xml.internal.bind.v2.model.core.ID;
 
 import java.util.Set;
 
-public interface MechanicService extends Service<Mechanic, ID> {
+public interface MechanicService extends Service<Mechanic, Integer> {
 
     Set<Mechanic>getAll();
 

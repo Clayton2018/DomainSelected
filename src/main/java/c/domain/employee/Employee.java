@@ -5,6 +5,7 @@ import javafx.util.Builder;
 public abstract class Employee {
 
     private int empID;
+    private String empJobTitle;
     private String empName;
     private String empSurname;
     private String empTel;
@@ -13,9 +14,11 @@ public abstract class Employee {
 
     public Employee(){};
 
+
     public Employee(Builder builder){
 
         this.empID = builder.empID;
+        this.empJobTitle = builder.empJobTitle;
         this.empName = builder.empName;
         this.empSurname = builder.empSurname;
         this.empTel = builder.empTel;
@@ -28,29 +31,62 @@ public abstract class Employee {
         return empID;
     }
 
+    public void setEmpID(int empID) {
+        this.empID = empID;
+    }
+
+    public String getEmpJobTitle() {
+        return empJobTitle;
+    }
+
+    public void setEmpJobTitle(String empJobTitle) {
+        this.empJobTitle = empJobTitle;
+    }
+
     public String getEmpName() {
         return empName;
+    }
+
+    public void setEmpName(String empName) {
+        this.empName = empName;
     }
 
     public String getEmpSurname() {
         return empSurname;
     }
 
+    public void setEmpSurname(String empSurname) {
+        this.empSurname = empSurname;
+    }
+
     public String getEmpTel() {
         return empTel;
+    }
+
+    public void setEmpTel(String empTel) {
+        this.empTel = empTel;
     }
 
     public String getEmpAddress() {
         return empAddress;
     }
 
+    public void setEmpAddress(String empAddress) {
+        this.empAddress = empAddress;
+    }
+
     public String getEmploymentDate() {
         return employmentDate;
+    }
+
+    public void setEmploymentDate(String employmentDate) {
+        this.employmentDate = employmentDate;
     }
 
     public static abstract class Builder{
 
         private int empID;
+        private String empJobTitle;
         private String empName;
         private String empSurname;
         private String empTel;
@@ -61,6 +97,13 @@ public abstract class Employee {
         public Builder empID(int empID){
 
             this.empID = empID;
+            return this;
+
+        }
+
+        public Builder empJobTitle(String empJobTitle){
+
+            this.empJobTitle = empJobTitle;
             return this;
 
         }
@@ -105,7 +148,8 @@ public abstract class Employee {
         public String toString(){
 
             return "Employee \n" + "EmployeeID: " + empID
-                    + "\n" + "Name: " + empName + "\nSurname: "
+                    + "\n" + "Job title: " + empJobTitle +"\n"
+                    + "Name: " + empName + "\nSurname: "
                     + empSurname + "\nAddress: " + empAddress
                     + "\nTel number: " + empTel
                     + "\nEmployment date: " + employmentDate;

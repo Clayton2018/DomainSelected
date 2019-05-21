@@ -2,7 +2,7 @@ package c.domain.customer;
 
 import javafx.util.Builder;
 
-public abstract class Customer {
+public class Customer {
 
 
     private int customerID;
@@ -11,12 +11,11 @@ public abstract class Customer {
     private String customerAddress;
     private String customerPhoneNum;
 
-    public Customer(){
-
+    public Customer() {
 
     }
 
-    public Customer(Builder builder){
+    public Customer(Builder builder) {
 
         this.customerID = builder.customerID;
         this.customerName = builder.customerName;
@@ -46,7 +45,7 @@ public abstract class Customer {
         return customerPhoneNum;
     }
 
-    public static abstract class Builder {
+    public static class Builder {
 
         private int customerID;
         private String customerName;
@@ -54,53 +53,57 @@ public abstract class Customer {
         private String customerAddress;
         private String customerPhoneNum;
 
-        public Builder customerID(int customerID){
+        public Builder customerID(int customerID) {
 
             this.customerID = customerID;
             return this;
 
         }
 
-        public Builder customerName(String customerName){
+        public Builder customerName(String customerName) {
 
             this.customerName = customerName;
             return this;
 
         }
 
-        public Builder customerSurname(String customerSurname){
+        public Builder customerSurname(String customerSurname) {
 
             this.customerSurname = customerSurname;
             return this;
 
         }
 
-        public Builder customerAddress(String customerAddress){
+        public Builder customerAddress(String customerAddress) {
 
             this.customerAddress = customerAddress;
             return this;
 
         }
 
-        public Builder customerPhoneNum(String customerPhoneNum){
+        public Builder customerPhoneNum(String customerPhoneNum) {
 
             this.customerPhoneNum = customerPhoneNum;
             return this;
 
         }
 
-        public abstract Customer build();
+        public Customer build(){
+
+            return new Customer(this);
 
         }
 
 
-    @Override
-    public String toString(){
+        @Override
+        public String toString() {
 
-        return "Customer \n" + "customerID: " + customerID
-        + "\n" + "Name: " + customerName + "\nSurname: "
-                + customerSurname + "\nAddress: " + customerAddress
-                + "\nTel number: " + customerPhoneNum;
+            return "Customer \n" + "customerID: " + customerID
+                    + "\n" + "Name: " + customerName + "\nSurname: "
+                    + customerSurname + "\nAddress: " + customerAddress
+                    + "\nTel number: " + customerPhoneNum;
+
+        }
 
     }
 
