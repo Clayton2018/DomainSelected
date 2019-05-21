@@ -16,7 +16,7 @@ public abstract class Vehicle {
 
     public Vehicle(){}
 
-    private Vehicle(Builder builder){
+    protected Vehicle(Builder builder){
 
         this.manufacturer = builder.manufacturer;
         this.registrationNumber = builder.registrationNumber;
