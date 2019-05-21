@@ -100,6 +100,8 @@ public abstract class Employee {
 
         }
 
+        public abstract Employee build();
+
         public String toString(){
 
             return "Employee \n" + "EmployeeID: " + empID
