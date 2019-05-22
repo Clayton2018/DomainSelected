@@ -1,4 +1,4 @@
 package c.domain.customer;
 
-public class Cash extend  {
+public class Cash  {
 }

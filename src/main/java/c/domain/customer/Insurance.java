@@ -7,6 +7,8 @@ public class Insurance {
     private String insurerName;
     private String insuranceCoverage;   //Example: accidental, 3rd party, full minor.
 
-    public Insurance()
+    public Insurance(){
+
+    }
 
 }
