@@ -2,6 +2,7 @@ package c.service.employee.impl;
 
 import c.domain.employee.Administrator;
 import c.repositories.employees.AdministratorRepository;
+import c.repositories.employees.impl.AdministratorRepositoryImpl;
 import c.service.employee.AdministratorService;
 import org.springframework.stereotype.Service;
 
@@ -15,7 +16,7 @@ public class AdministratorServiceImpl implements AdministratorService {
 
     public AdministratorServiceImpl() {
 
-        repository = AdministratorServiceImpl.getAdministratorRepository();
+        this.repository = AdministratorRepositoryImpl.getAdminRepo();
 
     }
 

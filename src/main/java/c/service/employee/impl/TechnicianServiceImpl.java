@@ -2,8 +2,8 @@ package c.service.employee.impl;
 
 import c.domain.employee.Technician;
 import c.repositories.employees.TechnicianRepository;
+import c.repositories.employees.impl.TechnicianRepositoryImpl;
 import c.service.employee.TechnicianService;
-import com.sun.xml.internal.bind.v2.model.core.ID;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
@@ -17,7 +17,7 @@ public class TechnicianServiceImpl implements TechnicianService {
 
     public TechnicianServiceImpl(){
 
-        this.repository = TechnicianServiceImpl.getTechnicianRepository();
+        this.repository = TechnicianRepositoryImpl.getTechnicianRepo();
 
 
     }

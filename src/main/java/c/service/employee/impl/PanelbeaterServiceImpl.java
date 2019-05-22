@@ -2,6 +2,7 @@ package c.service.employee.impl;
 
 import c.domain.employee.Panelbeater;
 import c.repositories.employees.PanelbeaterRepository;
+import c.repositories.employees.impl.PanelbeaterRepositoryImpl;
 import c.service.employee.PanelbeaterService;
 import org.springframework.stereotype.Service;
 
@@ -15,7 +16,7 @@ public class PanelbeaterServiceImpl implements PanelbeaterService {
 
     public PanelbeaterServiceImpl(){
 
-        this.repository = PanelbeaterServiceImpl.getPanelbeaterRepository();
+        this.repository = PanelbeaterRepositoryImpl.getPanelbeaterRepo();
 
     }
 

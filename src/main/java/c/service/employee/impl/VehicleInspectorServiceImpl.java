@@ -2,6 +2,7 @@ package c.service.employee.impl;
 
 import c.domain.employee.VehicleInspector;
 import c.repositories.employees.VehicleInspectorRepository;
+import c.repositories.employees.impl.VehicleInspectorRepositoryImpl;
 import c.service.employee.VehicleInspectorService;
 import com.sun.xml.internal.bind.v2.model.core.ID;
 import org.springframework.stereotype.Service;
@@ -16,7 +17,7 @@ public class VehicleInspectorServiceImpl implements VehicleInspectorService {
 
     public VehicleInspectorServiceImpl(){
 
-        this.repository = VehicleInspectorServiceImpl.getVehicleInspectorRepository();
+        this.repository = VehicleInspectorRepositoryImpl.getVehicleInspectorRepo();
 
     }
 

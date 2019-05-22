@@ -2,6 +2,7 @@ package c.service.employee.impl;
 
 import c.domain.employee.Driver;
 import c.repositories.employees.DriverRepository;
+import c.repositories.employees.impl.DriverRepositoryImpl;
 import c.service.employee.DriverService;
 import com.sun.xml.internal.bind.v2.model.core.ID;
 import org.springframework.stereotype.Service;
@@ -16,7 +17,7 @@ public class DriverServiceImpl implements DriverService {
 
     public DriverServiceImpl(){
 
-        this.repository = DriverServiceImpl.getDriverRepository();
+        this.repository = DriverRepositoryImpl.getDriverRepo();
 
     }
 

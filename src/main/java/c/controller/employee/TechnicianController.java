@@ -1,5 +1,6 @@
 package c.controller.employee;
 import c.domain.employee.Technician;
+import c.service.employee.impl.TechnicianServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -30,7 +31,7 @@ public class TechnicianController {
     }
 
     @PutMapping("/update")
-    public void update(RequestBody Technician tech){
+    public void update(@RequestBody Technician tech){
 
         technicianService.update(tech);
 

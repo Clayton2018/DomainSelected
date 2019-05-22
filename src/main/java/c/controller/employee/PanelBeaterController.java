@@ -2,13 +2,14 @@ package c.controller.employee;
 
 import c.domain.employee.Panelbeater;
 import c.domain.employee.Technician;
+import c.service.employee.impl.PanelbeaterServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Set;
 
 @RestController
-@RequestMapping("/employee/panelbeater")
+@RequestMapping("/panelbeater")
 public class PanelBeaterController {
 
 
@@ -32,7 +33,7 @@ public class PanelBeaterController {
     }
 
     @PutMapping("/update")
-    public void update(RequestBody Panelbeater panelB){
+    public void update(@RequestBody Panelbeater panelB){
 
         panelbeaterService.update(panelB);
 
@@ -48,7 +49,7 @@ public class PanelBeaterController {
     @GetMapping("/getAll")
     public Set<Panelbeater> getAll(){
 
-        return technicianService.getAll();
+        return panelbeaterService.getAll();
 
     }
 

@@ -2,6 +2,7 @@ package c.service.employee.impl;
 
 import c.domain.employee.Cleaner;
 import c.repositories.employees.CleanerRepository;
+import c.repositories.employees.impl.CleanerRepositoryImpl;
 import c.service.employee.CleanerService;
 import org.springframework.stereotype.Service;
 
@@ -16,7 +17,7 @@ public class CleanerServiceImpl implements CleanerService {
 
     public CleanerServiceImpl(){
 
-        this.repository = CleanerServiceImpl.getCleanerRepository();
+        this.repository = CleanerRepositoryImpl.getCleanerRepo();
 
     }
 

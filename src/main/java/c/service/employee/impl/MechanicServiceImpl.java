@@ -2,6 +2,7 @@ package c.service.employee.impl;
 
 import c.domain.employee.Mechanic;
 import c.repositories.employees.MechanicRepository;
+import c.repositories.employees.impl.MechanicRepositoryImpl;
 import c.service.employee.MechanicService;
 import org.springframework.stereotype.Service;
 
@@ -16,7 +17,7 @@ public class MechanicServiceImpl implements MechanicService {
 
     public MechanicServiceImpl(){
 
-        this.repository = MechanicServiceImpl.getMechanicRepository();
+        this.repository = MechanicRepositoryImpl.getMechanicRepo();
 
     }
 
