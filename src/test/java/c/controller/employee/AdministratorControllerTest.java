@@ -3,10 +3,16 @@ package c.controller.employee;
 
 import c.Factory.employee.AdministratorFactory;
 import c.domain.employee.Administrator;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.http.*;
+import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.web.client.HttpClientErrorException;
 
+import static junit.framework.TestCase.assertEquals;
 import static org.hibernate.validator.internal.util.Contracts.assertNotNull;
 
 @RunWith(SpringRunner.class)
@@ -21,7 +27,7 @@ public class AdministratorControllerTest {
     @Test
     public void create() {
 
-        Administrator admin = AdministratorFactory.getAdministrator(1, "front desk",);
+        Administrator admin = AdministratorFactory.getAdministrator(1, "front desk");
         admin.setEmpID(1);
 
         ResponseEntity<Administrator> postResponse = restTemplate.postForEntity(baseURL + "/new", admin, Administrator.class);

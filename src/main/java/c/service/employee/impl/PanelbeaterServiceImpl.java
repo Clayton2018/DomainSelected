@@ -11,6 +11,7 @@ import java.util.Set;
 @Service("PanelbeaterServiceImpl")
 public class PanelbeaterServiceImpl implements PanelbeaterService {
 
+
     private PanelbeaterServiceImpl service = null;
     private PanelbeaterRepository repository;
 
