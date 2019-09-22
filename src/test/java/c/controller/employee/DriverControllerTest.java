@@ -2,12 +2,19 @@ package c.controller.employee;
 
 import c.Factory.employee.DriverFactory;
 import c.domain.employee.Driver;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.http.*;
+import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.web.client.HttpClientErrorException;
 
+import static junit.framework.TestCase.assertEquals;
 import static org.hibernate.validator.internal.util.Contracts.assertNotNull;
-
+@RunWith(SpringRunner.class)
+@SpringBootTest(webEnvironment= SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class DriverControllerTest {
 
     @Autowired

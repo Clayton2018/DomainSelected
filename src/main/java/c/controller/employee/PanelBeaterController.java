@@ -1,9 +1,9 @@
 package c.controller.employee;
 
 import c.domain.employee.Panelbeater;
-import c.domain.employee.Technician;
 import c.service.employee.impl.PanelbeaterServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Set;
