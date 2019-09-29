@@ -64,7 +64,7 @@ public class Equipment {
         public String toString(){
 
             return "Equipment\n" + "ID: " + equipNum
-                    + "\n" + "Name: " + equipName;
+                    + "Name: " + equipName + "\n";
 
         }
 

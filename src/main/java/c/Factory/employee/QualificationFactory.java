@@ -6,7 +6,11 @@ public class QualificationFactory {
 
     public static Qualification getQualification(int qID, String qualName, String instituteName, String duration){
 
-        return (Qualification) new Qualification.Builder()
+        return new Qualification.Builder()
+                .qualificationID(qID)
+                .qualificationName(qualName)
+                .instituteName(instituteName)
+                .qualificationDuration(duration)
                 .build();
 
     }

@@ -1,5 +1,7 @@
 package c.domain.workshop;
 
+import java.util.Objects;
+
 public class Location extends Workshop {
 
 
@@ -54,7 +56,36 @@ public class Location extends Workshop {
 
         }
 
-    }
+        public Location build(){
+
+            return new Location(this);
+
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (!(o instanceof Builder)) return false;
+            Builder builder = (Builder) o;
+            return areaCode == builder.areaCode &&
+                    areaName.equals(builder.areaName);
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(areaCode, areaName);
+        }
+
+        @Override
+        public String toString() {
+            return "Builder " + "\n" +
+                    "areaCode=" + areaCode +
+                    ", areaName='" + areaName + '\'' +
+                    "\n";
+        }
 
 
-}
+    }//end builder inner class
+
+
+}//end location class

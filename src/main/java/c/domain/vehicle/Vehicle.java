@@ -135,12 +135,14 @@ public abstract class Vehicle {
 
         }
 
-        public Builder mileage(int mileage){
+        public Builder mileage(double mileage){
 
             this.mileage = mileage;
             return this;
 
         }
+
+        public abstract Vehicle build();
 
         public String toString(){
 

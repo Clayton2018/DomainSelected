@@ -2,7 +2,7 @@ package c.domain.employee;
 
 public class Administrator extends Employee {
 
-    private String type;
+    private String adminType;
 
     public Administrator(){
 
@@ -11,13 +11,13 @@ public class Administrator extends Employee {
     private Administrator(AdminBuilder builder){
 
         super(builder);
-        this.type = builder.type;
+        this.adminType = builder.adminType;
 
     }
 
     public static class AdminBuilder extends Employee.Builder{
 
-        private String type;
+        private String adminType;
 
         public AdminBuilder(){
 
@@ -25,9 +25,9 @@ public class Administrator extends Employee {
 
         }
 
-        public AdminBuilder type(String type){
+        public AdminBuilder type(String adminType){
 
-            this.type = type;
+            this.adminType = adminType;
             return this;
 
         }
@@ -43,7 +43,7 @@ public class Administrator extends Employee {
         public String toString(){
 
             return "AdminBuilder{" + "type: "
-                    + type + "\n" + ""
+                    + adminType + "\n" + ""
                     + super.toString();
 
         }
@@ -56,7 +56,7 @@ public class Administrator extends Employee {
 
             AdminBuilder that = (AdminBuilder) o;
 
-            return type != null ? type.equals(that.type): that.type == null;
+            return adminType != null ? adminType.equals(that.adminType): that.adminType == null;
 
         }
 

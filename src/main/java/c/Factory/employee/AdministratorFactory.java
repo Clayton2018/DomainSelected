@@ -8,7 +8,7 @@ public class AdministratorFactory {
 
         return (Administrator) new Administrator.AdminBuilder()
                 .type(type)
-                //.empID(empId)
+                .empID(empId)
                 .build();
 
     }

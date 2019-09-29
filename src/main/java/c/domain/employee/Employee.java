@@ -11,8 +11,10 @@ public abstract class Employee {
     private String empTel;
     private String empAddress;
     private String employmentDate;
+    private double empPay;
 
-    public Employee(){};
+
+    public Employee(){}
 
 
     public Employee(Builder builder){
@@ -83,6 +85,14 @@ public abstract class Employee {
         this.employmentDate = employmentDate;
     }
 
+    public double getEmpPay() {
+        return empPay;
+    }
+
+    public void setEmpPay(double empPay) {
+        this.empPay = empPay;
+    }
+
     public static abstract class Builder{
 
         private int empID;
@@ -92,6 +102,7 @@ public abstract class Employee {
         private String empTel;
         private String empAddress;
         private String employmentDate;
+        private double empPay;
 
 
         public Builder empID(int empID){
@@ -143,6 +154,14 @@ public abstract class Employee {
 
         }
 
+        public Builder empPay(double empPay){
+
+            this.empPay = empPay;
+            return this;
+
+        }
+
+
         public abstract Employee build();
 
         public String toString(){
@@ -152,7 +171,8 @@ public abstract class Employee {
                     + "Name: " + empName + "\nSurname: "
                     + empSurname + "\nAddress: " + empAddress
                     + "\nTel number: " + empTel
-                    + "\nEmployment date: " + employmentDate;
+                    + "\nEmployment date: " + employmentDate +"\n"
+                    + "Salary/wages (Hourly rate): R" + empPay + "\n";
 
         }
 

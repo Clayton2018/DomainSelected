@@ -1,4 +1,4 @@
-package c.domain.VehicleService;
+package c.domain.vehicleservice;
 
 import c.domain.customer.Customer;
 import c.domain.vehicle.Vehicle;
@@ -18,7 +18,7 @@ public abstract class VehicleService {
 
     }
 
-    public VehicleService(Builder builder){
+    public VehicleService(VehicleServiceBuilder builder){
 
         this.serviceID = builder.serviceID;
         this.serviceDate = builder.serviceDate;
@@ -68,7 +68,7 @@ public abstract class VehicleService {
     }
 
 
-    public static abstract class Builder{
+    public abstract static class VehicleServiceBuilder{
 
         private int serviceID;
         private String serviceDate, serviceDescription;
@@ -76,35 +76,35 @@ public abstract class VehicleService {
         private Vehicle vehicle;
 
 
-        public Builder serviceID(int serviceID){
+        public VehicleServiceBuilder serviceID(int serviceID){
 
             this.serviceID = serviceID;
             return this;
 
         }
 
-        public Builder serviceDate(String serviceDate){
+        public VehicleServiceBuilder serviceDate(String serviceDate){
 
             this.serviceDate = serviceDate;
             return this;
 
         }
 
-        public Builder serviceDescription(String serviceDescription){
+        public VehicleServiceBuilder serviceDescription(String serviceDescription){
 
             this.serviceDescription = serviceDescription;
             return this;
 
         }
 
-        public Builder customer(Customer customer){
+        public VehicleServiceBuilder customer(Customer customer){
 
             this.customer = customer;
             return this;
 
         }
 
-        public Builder vehicle(Vehicle vehicle){
+        public VehicleServiceBuilder vehicle(Vehicle vehicle){
 
             this.vehicle = vehicle;
             return this;
@@ -126,7 +126,7 @@ public abstract class VehicleService {
         public boolean equals(Object o) {
             if (this == o) return true;
             if (o == null || getClass() != o.getClass()) return false;
-            Builder builder = (Builder) o;
+            VehicleServiceBuilder builder = (VehicleServiceBuilder) o;
             return serviceID == builder.serviceID &&
                     serviceDate.equals(builder.serviceDate) &&
                     serviceDescription.equals(builder.serviceDescription) &&

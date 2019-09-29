@@ -4,12 +4,10 @@ import java.util.Objects;
 
 public class Suv extends Vehicle{
 
-
     private String bodyStyle;
 
 
     public Suv(){
-
 
     }
 
