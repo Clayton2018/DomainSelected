@@ -47,28 +47,28 @@ public class Booking {
 
         }//end inner class constructor
 
-        public BookingBuilder bookingId(){
+        public BookingBuilder bookingId(int bookingId){
 
             this.bookingId = bookingId;
             return this;
 
         }
 
-        public BookingBuilder customerId(){
+        public BookingBuilder customerId(int customerId){
 
             this.customerId = customerId;
             return this;
 
         }
 
-        public BookingBuilder vehicleReg(){
+        public BookingBuilder vehicleReg(int vehicleReg){
 
             this.vehicleReg = vehicleReg;
             return this;
 
         }
 
-        public BookingBuilder bookingDate(){
+        public BookingBuilder bookingDate(String bookingDate){
 
             this.bookingDate = bookingDate;
             return this;
