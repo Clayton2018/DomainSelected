@@ -1,4 +1,60 @@
 package c.service.customer.impl;
 
-public class CustomerServiceImpl {
+import c.domain.customer.Customer;
+import c.repositories.customer.CustomerRepository;
+import c.repositories.customer.impl.CustomerRepositoryImpl;
+import c.service.customer.CustomerService;
+
+import java.util.Set;
+
+public class CustomerServiceImpl implements CustomerService {
+
+    private CustomerServiceImpl service = null;
+    private CustomerRepository repository;
+
+    public CustomerServiceImpl() {
+
+        this.repository = CustomerRepositoryImpl.getCustomerRepo();
+
+    }
+
+    public CustomerServiceImpl getService() {
+
+        if (service == null){
+
+            return new CustomerServiceImpl();
+
+
+        }
+
+        return service;
+
+    }
+
+    @Override
+    public Set<Customer> getAll() {
+        return repository.getAll();
+    }
+
+    @Override
+    public Customer create(Customer customer) {
+        return repository.create(customer);
+    }
+
+    @Override
+    public Customer read(Integer integer) {
+        return repository.read(integer);
+    }
+
+    @Override
+    public Customer update(Customer customer) {
+        return repository.update(customer);
+    }
+
+    @Override
+    public void delete(Integer integer) {
+
+        repository.delete(integer);
+
+    }
 }
