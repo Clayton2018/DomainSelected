@@ -16,4 +16,11 @@ public class AutomotiveRepair {
 
     }
 
+    @Bean
+    public RestTemplate restTemplate(){
+
+        return new RestTemplate();
+
+    }
+
 }
