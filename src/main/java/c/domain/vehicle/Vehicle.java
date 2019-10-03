@@ -1,6 +1,5 @@
 package c.domain.vehicle;
 
-import javafx.util.Builder;
 
 public abstract class Vehicle {
 

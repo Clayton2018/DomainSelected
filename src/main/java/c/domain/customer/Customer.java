@@ -1,6 +1,5 @@
 package c.domain.customer;
 
-import javafx.util.Builder;
 
 public class Customer {
 
