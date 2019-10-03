@@ -9,7 +9,7 @@ import java.util.Set;
 
 public class QualificationServiceImpl implements QualificationService {
 
-    private QualificationServiceImpl service;
+    private QualificationServiceImpl service = null;
     private QualificationRepository repository;
 
 

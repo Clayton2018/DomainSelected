@@ -119,4 +119,4 @@ public class Booking {
 
     }//end inner class
 
-}//end Booking class
+}//end booking class

@@ -12,7 +12,7 @@ import java.util.Set;
 @Service("VehicleInspectorServiceImpl")
 public class VehicleInspectorServiceImpl implements VehicleInspectorService {
 
-    private VehicleInspectorServiceImpl service;
+    private VehicleInspectorServiceImpl service = null;
     private VehicleInspectorRepository repository;
 
     public VehicleInspectorServiceImpl(){
