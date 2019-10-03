@@ -1,4 +1,4 @@
-package c.Factory.vehicleservicefactory;
+package c.Factory.vehicleservice;
 
 import c.domain.vehicleservice.AccidentDamageRepair;
 

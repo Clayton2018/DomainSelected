@@ -5,7 +5,7 @@ import c.domain.vehicle.Vehicle;
 
 import java.util.Objects;
 
-public abstract class VehicleService {
+public class VehicleService {
 
 
      private int serviceID;
@@ -68,7 +68,7 @@ public abstract class VehicleService {
     }
 
 
-    public abstract static class VehicleServiceBuilder{
+    public static class VehicleServiceBuilder {
 
         private int serviceID;
         private String serviceDate, serviceDescription;
@@ -111,11 +111,15 @@ public abstract class VehicleService {
 
         }
 
-        public abstract VehicleService build();
+        public VehicleService build(){
+
+            return new VehicleService(this);
+
+        }
 
         public String toString(){
 
-            return "VehicleService \n" + "VehicleService ID: " + serviceID
+            return "VehicleServiceRepository \n" + "VehicleServiceRepository ID: " + serviceID
                     + "\n" + "Date: " + serviceDate + "\nDescription: "
                     + serviceDescription + "\nVehicle: " + vehicle
                     + "\nCustomer: " + customer;
