@@ -2,12 +2,14 @@ package c.repositories.employees.impl;
 
 import c.domain.employee.Qualification;
 import c.repositories.employees.QualificationRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+@Repository
 public class QualificationRepositoryImpl implements QualificationRepository {
 
     private static QualificationRepositoryImpl qualificationRepo = null;

@@ -2,12 +2,14 @@ package c.repositories.employees.impl;
 
 import c.domain.employee.Technician;
 import c.repositories.employees.TechnicianRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+@Repository
 public class TechnicianRepositoryImpl implements TechnicianRepository {
 
     private static TechnicianRepositoryImpl technicianRepo = null;

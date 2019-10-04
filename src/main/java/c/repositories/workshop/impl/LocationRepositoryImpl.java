@@ -2,12 +2,14 @@ package c.repositories.workshop.impl;
 
 import c.domain.workshop.Location;
 import c.repositories.workshop.LocationRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+@Repository
 public class LocationRepositoryImpl implements LocationRepository {
 
     private static LocationRepositoryImpl locationRepo = null;

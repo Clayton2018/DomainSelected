@@ -2,12 +2,14 @@ package c.repositories.vehicleservice.impl;
 
 import c.domain.vehicleservice.VehicleService;
 import c.repositories.vehicleservice.VehicleServiceRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+@Repository
 public class VehicleServiceRepositoryImpl implements VehicleServiceRepository {
 
     private static VehicleServiceRepositoryImpl vehicleServiceRepo = null;

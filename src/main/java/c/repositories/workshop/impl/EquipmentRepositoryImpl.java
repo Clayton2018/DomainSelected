@@ -2,12 +2,14 @@ package c.repositories.workshop.impl;
 
 import c.domain.workshop.Equipment;
 import c.repositories.workshop.EquipmentRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+@Repository
 public class EquipmentRepositoryImpl implements EquipmentRepository {
 
     private static EquipmentRepositoryImpl equipmentRepo = null;

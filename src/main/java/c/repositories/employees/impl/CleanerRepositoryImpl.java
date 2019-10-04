@@ -2,12 +2,14 @@ package c.repositories.employees.impl;
 
 import c.domain.employee.Cleaner;
 import c.repositories.employees.CleanerRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+@Repository
 public class CleanerRepositoryImpl implements CleanerRepository {
 
     private static CleanerRepositoryImpl cleanerRepo = null;

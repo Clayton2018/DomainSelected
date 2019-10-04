@@ -2,12 +2,14 @@ package c.repositories.customer.impl;
 
 import c.domain.customer.Insurance;
 import c.repositories.customer.InsuranceRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+@Repository
 public class InsuranceRepositoryImpl implements InsuranceRepository {
 
     private static InsuranceRepositoryImpl insuranceRepo = null;

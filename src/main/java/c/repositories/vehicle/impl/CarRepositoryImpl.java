@@ -3,12 +3,14 @@ package c.repositories.vehicle.impl;
 import c.domain.employee.Administrator;
 import c.domain.vehicle.Car;
 import c.repositories.vehicle.CarRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+@Repository
 public class CarRepositoryImpl implements CarRepository {
 
     private static CarRepositoryImpl carRepo = null;

@@ -2,12 +2,14 @@ package c.repositories.vehicle.impl;
 
 import c.domain.vehicle.Suv;
 import c.repositories.vehicle.SUVRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+@Repository
 public class SUVRepositoryImpl implements SUVRepository {
 
     private static SUVRepositoryImpl suvRepo = null;

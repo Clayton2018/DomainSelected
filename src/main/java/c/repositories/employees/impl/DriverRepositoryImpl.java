@@ -2,12 +2,14 @@ package c.repositories.employees.impl;
 
 import c.domain.employee.Driver;
 import c.repositories.employees.DriverRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+@Repository
 public class DriverRepositoryImpl implements DriverRepository {
 
     private static DriverRepositoryImpl driverRepo = null;

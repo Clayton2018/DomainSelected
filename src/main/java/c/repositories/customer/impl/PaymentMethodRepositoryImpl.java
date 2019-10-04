@@ -2,12 +2,14 @@ package c.repositories.customer.impl;
 
 import c.domain.customer.PaymentMethod;
 import c.repositories.customer.PaymentMethodRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+@Repository
 public class PaymentMethodRepositoryImpl implements PaymentMethodRepository {
 
     private static PaymentMethodRepositoryImpl paymentMethodRepo = null;

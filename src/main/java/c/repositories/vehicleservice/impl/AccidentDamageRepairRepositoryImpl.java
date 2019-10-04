@@ -2,12 +2,14 @@ package c.repositories.vehicleservice.impl;
 
 import c.domain.vehicleservice.AccidentDamageRepair;
 import c.repositories.vehicleservice.AccidentDamageRepairRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+@Repository
 public class AccidentDamageRepairRepositoryImpl implements AccidentDamageRepairRepository {
 
     private static AccidentDamageRepairRepositoryImpl accidentDamageRepairRepo = null;

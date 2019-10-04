@@ -2,12 +2,14 @@ package c.repositories.customer.impl;
 
 import c.domain.customer.Invoice;
 import c.repositories.customer.InvoiceRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+@Repository
 public class InvoiceRepositoryImpl implements InvoiceRepository {
 
     private static InvoiceRepositoryImpl invoiceRepo = null;

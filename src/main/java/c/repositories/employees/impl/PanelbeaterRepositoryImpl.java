@@ -2,12 +2,14 @@ package c.repositories.employees.impl;
 
 import c.domain.employee.Panelbeater;
 import c.repositories.employees.PanelbeaterRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+@Repository
 public class PanelbeaterRepositoryImpl implements PanelbeaterRepository {
 
     private static PanelbeaterRepositoryImpl panelbeaterRepo = null;
