@@ -17,9 +17,7 @@ public class CleanerController {
     private CleanerServiceImpl service;
 
     @PostMapping("/new")
-    public Cleaner create(@RequestBody Cleaner clean){
-
-        Cleaner cleaner = CleanerFactory.getCleaner(1);
+    public Cleaner create(@RequestBody Cleaner cleaner){
 
         return service.create(cleaner);
 
