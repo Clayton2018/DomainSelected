@@ -4,12 +4,16 @@ import c.domain.customer.Invoice;
 import c.repositories.customer.InvoiceRepository;
 import c.repositories.customer.impl.InvoiceRepositoryImpl;
 import c.service.customer.InvoiceService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service("InvoiceServiceImpl")
 public class InvoiceServiceImpl implements InvoiceService {
 
     private InvoiceServiceImpl service = null;
+    @Autowired
     private InvoiceRepository repository;
 
 

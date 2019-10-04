@@ -4,12 +4,16 @@ import c.domain.customer.PaymentMethod;
 import c.repositories.customer.PaymentMethodRepository;
 import c.repositories.customer.impl.PaymentMethodRepositoryImpl;
 import c.service.customer.PaymentMethodService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service("PaymentMethodServiceImpl")
 public class PaymentMethodServiceImpl implements PaymentMethodService {
 
     private PaymentMethodServiceImpl service = null;
+    @Autowired
     private PaymentMethodRepository repository;
 
     public PaymentMethodServiceImpl() {

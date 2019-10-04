@@ -4,6 +4,7 @@ import c.domain.employee.Mechanic;
 import c.repositories.employees.MechanicRepository;
 import c.repositories.employees.impl.MechanicRepositoryImpl;
 import c.service.employee.MechanicService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
@@ -13,6 +14,7 @@ public class MechanicServiceImpl implements MechanicService {
 
 
     private MechanicServiceImpl service = null;
+    @Autowired
     private MechanicRepository repository;
 
     public MechanicServiceImpl(){

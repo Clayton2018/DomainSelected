@@ -4,12 +4,16 @@ import c.domain.workshop.Workshop;
 import c.repositories.workshop.WorkshopRepository;
 import c.repositories.workshop.impl.WorkshopRepositoryImpl;
 import c.service.workshop.WorkshopService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service("WorkshopServiceImpl")
 public class WorkshopServiceImpl implements WorkshopService {
 
     private WorkshopServiceImpl service = null;
+    @Autowired
     private WorkshopRepository repository;
 
     public WorkshopServiceImpl() {

@@ -4,12 +4,16 @@ import c.domain.customer.Insurance;
 import c.repositories.customer.InsuranceRepository;
 import c.repositories.customer.impl.InsuranceRepositoryImpl;
 import c.service.customer.InsuranceService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service("InsuranceServiceImpl")
 public class InsuranceServiceImpl implements InsuranceService {
 
     private InsuranceServiceImpl service = null;
+    @Autowired
     private InsuranceRepository repository;
 
 

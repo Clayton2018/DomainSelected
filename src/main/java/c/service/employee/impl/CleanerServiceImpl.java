@@ -4,6 +4,7 @@ import c.domain.employee.Cleaner;
 import c.repositories.employees.CleanerRepository;
 import c.repositories.employees.impl.CleanerRepositoryImpl;
 import c.service.employee.CleanerService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
@@ -13,6 +14,7 @@ public class CleanerServiceImpl implements CleanerService {
 
 
     private CleanerServiceImpl service = null;
+    @Autowired
     private CleanerRepository repository;
 
     public CleanerServiceImpl(){

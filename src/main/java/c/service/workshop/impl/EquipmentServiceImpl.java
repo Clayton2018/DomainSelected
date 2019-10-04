@@ -4,12 +4,16 @@ import c.domain.workshop.Equipment;
 import c.repositories.workshop.EquipmentRepository;
 import c.repositories.workshop.impl.EquipmentRepositoryImpl;
 import c.service.workshop.EquipmentService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service("EquipmentServiceImpl")
 public class EquipmentServiceImpl implements EquipmentService {
 
     private EquipmentServiceImpl service = null;
+    @Autowired
     private EquipmentRepository repository;
 
     public EquipmentServiceImpl() {

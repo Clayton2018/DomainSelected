@@ -4,6 +4,7 @@ import c.domain.employee.VehicleInspector;
 import c.repositories.employees.VehicleInspectorRepository;
 import c.repositories.employees.impl.VehicleInspectorRepositoryImpl;
 import c.service.employee.VehicleInspectorService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
@@ -12,6 +13,7 @@ import java.util.Set;
 public class VehicleInspectorServiceImpl implements VehicleInspectorService {
 
     private VehicleInspectorServiceImpl service = null;
+    @Autowired
     private VehicleInspectorRepository repository;
 
     public VehicleInspectorServiceImpl(){

@@ -4,12 +4,16 @@ import c.domain.vehicleservice.AccidentDamageRepair;
 import c.repositories.vehicleservice.AccidentDamageRepairRepository;
 import c.repositories.vehicleservice.impl.AccidentDamageRepairRepositoryImpl;
 import c.service.vehicleservice.AccidentDamageRepairService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service("AccidentDamageRepairServiceImpl")
 public class AccidentDamageRepairServiceImpl implements AccidentDamageRepairService {
 
     private AccidentDamageRepairServiceImpl service = null;
+    @Autowired
     private AccidentDamageRepairRepository repository;
 
     public AccidentDamageRepairServiceImpl() {

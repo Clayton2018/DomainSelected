@@ -4,6 +4,7 @@ import c.domain.employee.Administrator;
 import c.repositories.employees.AdministratorRepository;
 import c.repositories.employees.impl.AdministratorRepositoryImpl;
 import c.service.employee.AdministratorService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
@@ -12,6 +13,7 @@ import java.util.Set;
 public class AdministratorServiceImpl implements AdministratorService {
 
     private AdministratorServiceImpl service = null;
+    @Autowired
     private AdministratorRepository repository;
 
     public AdministratorServiceImpl() {

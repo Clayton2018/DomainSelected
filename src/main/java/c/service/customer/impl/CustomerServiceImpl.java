@@ -4,12 +4,17 @@ import c.domain.customer.Customer;
 import c.repositories.customer.CustomerRepository;
 import c.repositories.customer.impl.CustomerRepositoryImpl;
 import c.service.customer.CustomerService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service("CustomerServiceImpl")
 public class CustomerServiceImpl implements CustomerService {
 
     private CustomerServiceImpl service = null;
+
+    @Autowired
     private CustomerRepository repository;
 
     public CustomerServiceImpl() {

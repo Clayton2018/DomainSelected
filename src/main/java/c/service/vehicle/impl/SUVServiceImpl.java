@@ -4,9 +4,11 @@ import c.domain.vehicle.Suv;
 import c.repositories.vehicle.SUVRepository;
 import c.repositories.vehicle.impl.SUVRepositoryImpl;
 import c.service.vehicle.SUVService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service("SUVServiceImpl")
 public class SUVServiceImpl implements SUVService {
 
     private SUVServiceImpl service = null;

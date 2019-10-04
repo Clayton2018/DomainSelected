@@ -2,6 +2,7 @@ package c.repositories.booking.impl;
 
 import c.domain.booking.Booking;
 import c.repositories.booking.BookingRepository;
+import org.springframework.stereotype.Repository;
 
 import java.awt.print.Book;
 import java.util.HashMap;
@@ -9,6 +10,7 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+@Repository
 public class BookingRepositoryImpl implements BookingRepository {
 
     private static BookingRepositoryImpl bookingRepo = null;

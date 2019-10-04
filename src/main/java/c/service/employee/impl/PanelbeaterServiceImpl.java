@@ -4,6 +4,7 @@ import c.domain.employee.Panelbeater;
 import c.repositories.employees.PanelbeaterRepository;
 import c.repositories.employees.impl.PanelbeaterRepositoryImpl;
 import c.service.employee.PanelbeaterService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
@@ -12,6 +13,7 @@ import java.util.Set;
 public class PanelbeaterServiceImpl implements PanelbeaterService {
 
     private PanelbeaterServiceImpl service = null;
+    @Autowired
     private PanelbeaterRepository repository;
 
     public PanelbeaterServiceImpl(){

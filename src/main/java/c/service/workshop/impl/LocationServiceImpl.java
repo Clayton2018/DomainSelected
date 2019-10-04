@@ -4,12 +4,16 @@ import c.domain.workshop.Location;
 import c.repositories.workshop.LocationRepository;
 import c.repositories.workshop.impl.LocationRepositoryImpl;
 import c.service.workshop.LocationService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service("LocationServiceImpl")
 public class LocationServiceImpl implements LocationService {
 
     private LocationServiceImpl service = null;
+    @Autowired
     private LocationRepository repository;
 
     public LocationServiceImpl() {

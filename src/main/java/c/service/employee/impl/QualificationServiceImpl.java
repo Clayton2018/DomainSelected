@@ -4,12 +4,16 @@ import c.domain.employee.Qualification;
 import c.repositories.employees.QualificationRepository;
 import c.repositories.employees.impl.QualificationRepositoryImpl;
 import c.service.employee.QualificationService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service("QualificationServiceImpl")
 public class QualificationServiceImpl implements QualificationService {
 
     private QualificationServiceImpl service = null;
+    @Autowired
     private QualificationRepository repository;
 
 

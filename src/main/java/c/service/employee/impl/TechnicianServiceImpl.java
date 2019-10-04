@@ -4,6 +4,7 @@ import c.domain.employee.Technician;
 import c.repositories.employees.TechnicianRepository;
 import c.repositories.employees.impl.TechnicianRepositoryImpl;
 import c.service.employee.TechnicianService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
@@ -13,6 +14,7 @@ public class TechnicianServiceImpl implements TechnicianService {
 
 
     private TechnicianServiceImpl service = null;
+    @Autowired
     private TechnicianRepository repository;
 
     public TechnicianServiceImpl(){

@@ -4,6 +4,7 @@ import c.domain.employee.Driver;
 import c.repositories.employees.DriverRepository;
 import c.repositories.employees.impl.DriverRepositoryImpl;
 import c.service.employee.DriverService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
@@ -12,6 +13,7 @@ import java.util.Set;
 public class DriverServiceImpl implements DriverService {
 
     private DriverServiceImpl service = null;
+    @Autowired
     private DriverRepository repository;
 
     public DriverServiceImpl(){

@@ -4,12 +4,16 @@ import c.domain.vehicle.Truck;
 import c.repositories.vehicle.TruckRepository;
 import c.repositories.vehicle.impl.TruckRepositoryImpl;
 import c.service.vehicle.TruckService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service("TruckServiceImpl")
 public class TruckServiceImpl implements TruckService {
 
     private TruckServiceImpl service = null;
+    @Autowired
     private TruckRepository repository;
 
     public TruckServiceImpl() {
