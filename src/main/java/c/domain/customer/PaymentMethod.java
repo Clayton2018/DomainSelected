@@ -3,12 +3,14 @@ package c.domain.customer;
 //import javafx.util.Builder;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
 public class PaymentMethod {
 
-    private double amount;
+    @Id
     private String payType;
+    private double amount;
     private String payDate;
 
 

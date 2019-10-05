@@ -3,12 +3,17 @@ package c.domain.booking;
 import c.domain.customer.Customer;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.util.Objects;
 
 @Entity
 public class Booking {
 
-    private int bookingId, customerId, vehicleReg;
+    @Id
+    private int bookingId;
+
+    private int customerId;
+    private int vehicleReg;
     private String bookingDate;
 
     public Booking() {

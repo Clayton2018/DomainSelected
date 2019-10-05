@@ -1,12 +1,14 @@
 package c.domain.workshop;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.util.Objects;
 
 @Entity
 public class Location extends Workshop {
 
 
+    @Id
     private int areaCode;
     private String areaName;
 

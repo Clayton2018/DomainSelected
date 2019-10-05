@@ -1,13 +1,17 @@
 package c.domain.customer;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.util.Objects;
 
 @Entity
 public class Invoice {
 
-    private String invoiceDate;
+
+
+    @Id
     private int invoiceNum;
+    private String invoiceDate;
     private String description;
     private double amount;
 

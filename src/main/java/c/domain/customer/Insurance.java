@@ -1,11 +1,13 @@
 package c.domain.customer;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
 public class Insurance {
 
 
+    @Id
     private int insuranceId;
     private String insurerName;
     private String insuranceCoverage;   //Example: accidental, 3rd party, full, minor.

@@ -1,12 +1,15 @@
 package c.domain.vehicle;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.util.Objects;
 
 @Entity
 public class Truck extends Vehicle {
 
+    @Id
     private String type;
+
     private String loadCapacity;
 
     public Truck(){

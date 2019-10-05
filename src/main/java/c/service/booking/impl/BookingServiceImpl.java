@@ -2,6 +2,7 @@ package c.service.booking.impl;
 
 import c.domain.booking.Booking;
 import c.repositories.booking.BookingRepository;
+import c.repositories.booking.hibernate.BookingHibernateImpl;
 import c.service.booking.BookingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -4,12 +4,14 @@ import c.domain.customer.Customer;
 import c.domain.vehicle.Vehicle;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.util.Objects;
 
 @Entity
 public class VehicleService {
 
 
+    @Id
      private int serviceID;
      private String serviceDate, serviceDescription;
      private Vehicle vehicle;

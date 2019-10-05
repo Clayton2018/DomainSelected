@@ -1,11 +1,13 @@
 package c.domain.workshop;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.util.Objects;
 
 @Entity
 public class Workshop {
 
+    @Id
     private String workshopName;
     private int noOfEmployees;
     private int locationID;

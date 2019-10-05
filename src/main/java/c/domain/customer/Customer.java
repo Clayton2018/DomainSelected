@@ -1,11 +1,13 @@
 package c.domain.customer;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
 public class Customer {
 
 
+    @Id
     private int customerID;
     private String customerName;
     private String customerSurname;

@@ -9,6 +9,6 @@ import java.util.Set;
 @Repository
 public interface BookingRepository extends CrudRepository<Booking, Integer> {
 
-    Set<Booking> getAll();
+    //Set<Booking> getAll();
 
 }

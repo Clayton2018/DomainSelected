@@ -3,10 +3,13 @@ package c.domain.employee;
 //import javafx.util.Builder;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
 
-@Entity
+@MappedSuperclass
 public abstract class Employee {
 
+    @Id
     private int empID;
     private String empJobTitle;
     private String empName;

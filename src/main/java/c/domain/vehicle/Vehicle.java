@@ -1,13 +1,18 @@
 package c.domain.vehicle;
 
-import javax.persistence.Entity;
+import org.springframework.data.annotation.Id;
 
-@Entity
+import javax.persistence.Entity;
+import javax.persistence.MappedSuperclass;
+
+@MappedSuperclass
 public abstract class Vehicle {
 
 
-    private String manufacturer;
+    @Id
     private String registrationNumber;
+
+    private String manufacturer;
     private String lastServiceDate;
     private int modelYear;
     private int vinNum;
