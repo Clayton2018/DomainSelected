@@ -3,6 +3,7 @@ package c.controller.employee;
 import c.domain.employee.Panelbeater;
 import c.service.employee.impl.PanelbeaterServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,6 +15,7 @@ public class PanelBeaterController {
 
 
     @Autowired
+    @Qualifier("PanelbeaterServiceImpl")
     private PanelbeaterServiceImpl panelbeaterService;
 
 

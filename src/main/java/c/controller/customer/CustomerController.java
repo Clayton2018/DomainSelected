@@ -3,6 +3,7 @@ package c.controller.customer;
 import c.domain.customer.Customer;
 import c.service.customer.impl.CustomerServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Set;
@@ -12,6 +13,7 @@ import java.util.Set;
 public class CustomerController {
 
     @Autowired
+    @Qualifier("CustomerServiceImpl")
     private CustomerServiceImpl customerService;
 
     @PostMapping("/new")

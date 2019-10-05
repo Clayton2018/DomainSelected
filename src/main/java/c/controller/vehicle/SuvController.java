@@ -3,6 +3,7 @@ package c.controller.vehicle;
 import c.domain.vehicle.Suv;
 import c.service.vehicle.impl.SUVServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Set;
@@ -12,6 +13,7 @@ import java.util.Set;
 public class SuvController {
 
     @Autowired
+    @Qualifier("SUVServiceImpl")
     private SUVServiceImpl suvService;
 
     @PostMapping("/new")

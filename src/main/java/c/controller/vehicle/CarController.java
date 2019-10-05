@@ -4,6 +4,7 @@ package c.controller.vehicle;
 import c.domain.vehicle.Car;
 import c.service.vehicle.impl.CarServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Set;
@@ -13,6 +14,7 @@ import java.util.Set;
 public class CarController {
 
     @Autowired
+    @Qualifier("CarServiceImpl")
     private CarServiceImpl carService;
 
     @PostMapping("/new")

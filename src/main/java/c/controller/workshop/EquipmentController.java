@@ -3,6 +3,7 @@ package c.controller.workshop;
 import c.domain.workshop.Equipment;
 import c.service.workshop.impl.EquipmentServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Set;
@@ -12,6 +13,7 @@ import java.util.Set;
 public class EquipmentController {
 
     @Autowired
+    @Qualifier("EquipmentServiceImpl")
     private EquipmentServiceImpl equipmentService;
 
 

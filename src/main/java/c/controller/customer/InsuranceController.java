@@ -2,7 +2,9 @@ package c.controller.customer;
 
 import c.domain.customer.Insurance;
 import c.service.customer.impl.InsuranceServiceImpl;
+import c.service.employee.impl.AdministratorServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Set;
@@ -12,6 +14,7 @@ import java.util.Set;
 public class InsuranceController {
 
     @Autowired
+    @Qualifier("InsuranceServiceImpl")
     private InsuranceServiceImpl insuranceService;
 
     @PostMapping("/new")

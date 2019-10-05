@@ -3,6 +3,7 @@ package c.controller.employee;
 import c.domain.employee.VehicleInspector;
 import c.service.employee.impl.VehicleInspectorServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Set;
@@ -11,6 +12,7 @@ import java.util.Set;
 public class VehicleInspectorController {
 
     @Autowired
+    @Qualifier("VehicleInspectorServiceImpl")
     private VehicleInspectorServiceImpl service;
 
     @PostMapping("/new")

@@ -4,6 +4,7 @@ import c.Factory.employee.AdministratorFactory;
 import c.domain.employee.Administrator;
 import c.service.employee.impl.AdministratorServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Set;
@@ -13,6 +14,7 @@ import java.util.Set;
 public class AdminController {
 
     @Autowired
+    @Qualifier("AdministratorServiceImpl")
     private AdministratorServiceImpl administratorService;
 
     @PostMapping("/new")

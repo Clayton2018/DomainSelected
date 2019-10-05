@@ -3,6 +3,7 @@ package c.controller.employee;
 import c.domain.employee.Qualification;
 import c.service.employee.impl.QualificationServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Set;
@@ -12,6 +13,7 @@ import java.util.Set;
 public class QualificationController {
 
     @Autowired
+    @Qualifier("QualificationServiceImpl")
     private QualificationServiceImpl qualificationService;
 
 

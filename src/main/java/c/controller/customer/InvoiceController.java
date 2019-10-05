@@ -4,6 +4,7 @@ package c.controller.customer;
 import c.domain.customer.Invoice;
 import c.service.customer.impl.InvoiceServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Set;
@@ -14,6 +15,7 @@ public class InvoiceController {
 
 
     @Autowired
+    @Qualifier("InvoiceServiceImpl")
     private InvoiceServiceImpl invoiceService;
 
 

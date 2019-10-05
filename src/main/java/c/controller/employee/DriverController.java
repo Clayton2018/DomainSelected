@@ -4,6 +4,7 @@ import c.Factory.employee.DriverFactory;
 import c.domain.employee.Driver;
 import c.service.employee.impl.DriverServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Set;
@@ -15,6 +16,7 @@ public class DriverController {
     public class CleanerController {
 
         @Autowired
+        @Qualifier("DriverServiceImpl")
         private DriverServiceImpl service;
 
         @PostMapping("/new")
