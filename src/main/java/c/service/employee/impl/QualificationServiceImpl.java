@@ -2,11 +2,12 @@ package c.service.employee.impl;
 
 import c.domain.employee.Qualification;
 import c.repositories.employees.QualificationRepository;
-import c.repositories.employees.impl.QualificationRepositoryImpl;
 import c.service.employee.QualificationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Service("QualificationServiceImpl")
@@ -19,7 +20,7 @@ public class QualificationServiceImpl implements QualificationService {
 
     public QualificationServiceImpl() {
 
-        this.repository = QualificationRepositoryImpl.getQualificationRepo();
+        //this.repository = QualificationRepositoryImpl.getQualificationRepo();
 
     }
 
@@ -36,28 +37,30 @@ public class QualificationServiceImpl implements QualificationService {
 
     @Override
     public Set<Qualification> getAll() {
-        return repository.getAll();
+
+        List<Qualification> qualificationList = (List<Qualification>) repository.findAll();
+        return new HashSet<>(qualificationList);
     }
 
     @Override
     public Qualification create(Qualification qualification) {
-        return repository.create(qualification);
+        return repository.save(qualification);
     }
 
     @Override
     public Qualification read(Integer integer) {
-        return repository.read(integer);
+        return repository.findById(integer).orElse(null);
     }
 
     @Override
     public Qualification update(Qualification qualification) {
-        return repository.update(qualification);
+        return repository.save(qualification);
     }
 
     @Override
     public void delete(Integer integer) {
 
-        repository.delete(integer);
+        repository.deleteById(integer);
 
     }
 }

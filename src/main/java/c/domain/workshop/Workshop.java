@@ -1,7 +1,9 @@
 package c.domain.workshop;
 
+import javax.persistence.Entity;
 import java.util.Objects;
 
+@Entity
 public class Workshop {
 
     private String workshopName;

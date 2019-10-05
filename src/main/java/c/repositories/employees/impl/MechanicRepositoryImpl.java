@@ -1,4 +1,4 @@
-package c.repositories.employees.impl;
+/*package c.repositories.employees.impl;
 
 import c.domain.employee.Mechanic;
 import c.repositories.employees.MechanicRepository;
@@ -65,3 +65,5 @@ public class MechanicRepositoryImpl implements MechanicRepository {
 
     }
 }
+
+ */

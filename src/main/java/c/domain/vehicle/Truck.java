@@ -1,7 +1,9 @@
 package c.domain.vehicle;
 
+import javax.persistence.Entity;
 import java.util.Objects;
 
+@Entity
 public class Truck extends Vehicle {
 
     private String type;

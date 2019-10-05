@@ -1,4 +1,4 @@
-package c.repositories.workshop.impl;
+/*package c.repositories.workshop.impl;
 
 import c.domain.workshop.Location;
 import c.repositories.workshop.LocationRepository;
@@ -67,3 +67,5 @@ public class LocationRepositoryImpl implements LocationRepository {
 
     }
 }
+
+ */

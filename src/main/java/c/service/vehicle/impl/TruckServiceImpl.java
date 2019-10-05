@@ -2,11 +2,12 @@ package c.service.vehicle.impl;
 
 import c.domain.vehicle.Truck;
 import c.repositories.vehicle.TruckRepository;
-import c.repositories.vehicle.impl.TruckRepositoryImpl;
 import c.service.vehicle.TruckService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Service("TruckServiceImpl")
@@ -18,7 +19,7 @@ public class TruckServiceImpl implements TruckService {
 
     public TruckServiceImpl() {
 
-        this.repository = TruckRepositoryImpl.getTruckRepo();
+       // this.repository = TruckRepositoryImpl.getTruckRepo();
 
     }
 
@@ -36,28 +37,31 @@ public class TruckServiceImpl implements TruckService {
 
     @Override
     public Set<Truck> getAll() {
-        return repository.getAll();
+
+        List<Truck> truckList = (List<Truck>) repository.findAll();
+        return new HashSet<>(truckList);
+
     }
 
     @Override
     public Truck create(Truck truck) {
-        return repository.create(truck);
+        return repository.save(truck);
     }
 
     @Override
     public Truck read(String s) {
-        return repository.read(s);
+        return repository.findById(s).orElse(null);
     }
 
     @Override
     public Truck update(Truck truck) {
-        return repository.update(truck);
+        return repository.save(truck);
     }
 
     @Override
     public void delete(String s) {
 
-        repository.delete(s);
+        repository.deleteById(s);
 
     }
 }

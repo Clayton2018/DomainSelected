@@ -2,11 +2,12 @@ package c.service.employee.impl;
 
 import c.domain.employee.Administrator;
 import c.repositories.employees.AdministratorRepository;
-import c.repositories.employees.impl.AdministratorRepositoryImpl;
 import c.service.employee.AdministratorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Service("AdministratorServiceImpl")
@@ -18,7 +19,7 @@ public class AdministratorServiceImpl implements AdministratorService {
 
     public AdministratorServiceImpl() {
 
-        this.repository = AdministratorRepositoryImpl.getAdminRepo();
+        //this.repository = AdministratorRepositoryImpl.getAdminRepo();
 
     }
 
@@ -37,29 +38,31 @@ public class AdministratorServiceImpl implements AdministratorService {
     @Override
     public Set<Administrator> getAll() {
 
-        return this.repository.getAll();
+        List<Administrator> administratorList = (List<Administrator>) repository.findAll();
+        return new HashSet<>(administratorList);
 
     }
 
     @Override
     public Administrator create(Administrator administrator) {
-        return this.repository.create(administrator);
+
+        return repository.save(administrator);
     }
 
     @Override
     public Administrator read(Integer integer) {
-        return repository.read(integer);
+        return repository.findById(integer).orElse(null);
     }
 
     @Override
     public Administrator update(Administrator administrator) {
-        return repository.update(administrator);
+        return repository.save(administrator);
     }
 
     @Override
     public void delete(Integer integer) {
 
-        repository.delete(integer);
+        repository.deleteById(integer);
 
     }
 }

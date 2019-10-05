@@ -3,8 +3,10 @@ package c.domain.vehicleservice;
 import c.domain.customer.Customer;
 import c.domain.vehicle.Vehicle;
 
+import javax.persistence.Entity;
 import java.util.Objects;
 
+@Entity
 public class VehicleService {
 
 

@@ -1,7 +1,9 @@
 package c.domain.vehicleservice;
 
+import javax.persistence.Entity;
 import java.util.Objects;
 
+@Entity
 public class AccidentDamageRepair {
 
     private int accidentCode;  //rating of the extent of the damage.

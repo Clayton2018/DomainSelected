@@ -1,4 +1,4 @@
-package c.repositories.employees.impl;
+/*package c.repositories.employees.impl;
 
 import c.domain.employee.VehicleInspector;
 import c.repositories.employees.VehicleInspectorRepository;
@@ -66,3 +66,5 @@ public class VehicleInspectorRepositoryImpl implements VehicleInspectorRepositor
     }
 
 }
+
+ */

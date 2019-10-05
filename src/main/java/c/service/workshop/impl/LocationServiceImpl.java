@@ -2,11 +2,12 @@ package c.service.workshop.impl;
 
 import c.domain.workshop.Location;
 import c.repositories.workshop.LocationRepository;
-import c.repositories.workshop.impl.LocationRepositoryImpl;
 import c.service.workshop.LocationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Service("LocationServiceImpl")
@@ -18,7 +19,7 @@ public class LocationServiceImpl implements LocationService {
 
     public LocationServiceImpl() {
 
-        this.repository = LocationRepositoryImpl.getLocationRepo();
+        //this.repository = LocationRepositoryImpl.getLocationRepo();
 
     }
 
@@ -36,28 +37,31 @@ public class LocationServiceImpl implements LocationService {
 
     @Override
     public Set<Location> getAll() {
-        return repository.getAll();
+
+        List<Location> locationList = (List<Location>) repository.findAll();
+        return new HashSet<>(locationList);
+
     }
 
     @Override
     public Location create(Location location) {
-        return repository.create(location);
+        return repository.save(location);
     }
 
     @Override
     public Location read(Integer integer) {
-        return repository.read(integer);
+        return repository.findById(integer).orElse(null);
     }
 
     @Override
     public Location update(Location location) {
-        return repository.update(location);
+        return repository.save(location);
     }
 
     @Override
     public void delete(Integer integer) {
 
-        repository.delete(integer);
+        repository.deleteById(integer);
 
     }
 }

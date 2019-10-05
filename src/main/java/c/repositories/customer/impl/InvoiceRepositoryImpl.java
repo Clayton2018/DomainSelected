@@ -1,4 +1,4 @@
-package c.repositories.customer.impl;
+/*package c.repositories.customer.impl;
 
 import c.domain.customer.Invoice;
 import c.repositories.customer.InvoiceRepository;
@@ -64,3 +64,5 @@ public class InvoiceRepositoryImpl implements InvoiceRepository {
 
     }
 }
+
+ */

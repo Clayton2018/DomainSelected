@@ -2,6 +2,9 @@ package c.domain.employee;
 
 //import javafx.util.Builder;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Qualification {
 
 

@@ -2,11 +2,11 @@ package c.service.customer.impl;
 
 import c.domain.customer.PaymentMethod;
 import c.repositories.customer.PaymentMethodRepository;
-import c.repositories.customer.impl.PaymentMethodRepositoryImpl;
 import c.service.customer.PaymentMethodService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Set;
 
 @Service("PaymentMethodServiceImpl")
@@ -18,7 +18,7 @@ public class PaymentMethodServiceImpl implements PaymentMethodService {
 
     public PaymentMethodServiceImpl() {
 
-        this.repository = PaymentMethodRepositoryImpl.getPaymentMethodRepo();
+       // this.repository = PaymentMethodRepositoryImpl.getPaymentMethodRepo();
 
     }
 
@@ -34,28 +34,31 @@ public class PaymentMethodServiceImpl implements PaymentMethodService {
 
     @Override
     public Set<PaymentMethod> getAll() {
+
+        List<PaymentMethod> paymentMethod = (List<PaymentMethod>) repository.findAll();
         return repository.getAll();
+
     }
 
     @Override
     public PaymentMethod create(PaymentMethod paymentMethod) {
-        return repository.create(paymentMethod);
+        return repository.save(paymentMethod);
     }
 
     @Override
     public PaymentMethod read(String str) {
-        return repository.read(str);
+        return repository.findById(str).orElse(null);
     }
 
     @Override
     public PaymentMethod update(PaymentMethod paymentMethod) {
-        return repository.update(paymentMethod);
+        return repository.save(paymentMethod);
     }
 
     @Override
     public void delete(String str) {
 
-        repository.delete(str);
+        repository.deleteById(str);
 
     }
 }

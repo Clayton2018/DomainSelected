@@ -2,10 +2,11 @@ package c.service.vehicle.impl;
 
 import c.domain.vehicle.Car;
 import c.repositories.vehicle.CarRepository;
-import c.repositories.vehicle.impl.CarRepositoryImpl;
 import c.service.vehicle.CarService;
 import org.springframework.stereotype.Service;
 
+import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Service("CarServiceImpl")
@@ -16,7 +17,7 @@ public class CarServiceImpl implements CarService {
 
     public CarServiceImpl() {
 
-        this.repository = CarRepositoryImpl.getCarRepo();
+        //this.repository = CarRepositoryImpl.getCarRepo();
 
     }
 
@@ -34,28 +35,30 @@ public class CarServiceImpl implements CarService {
 
     @Override
     public Set<Car> getAll() {
-        return repository.getAll();
+
+        List<Car> carList = (List<Car>) repository.findAll();
+        return new HashSet<>(carList);
     }
 
     @Override
     public Car create(Car car) {
-        return repository.create(car);
+        return repository.save(car);
     }
 
     @Override
     public Car read(String s) {
-        return repository.read(s);
+        return repository.findById(s).orElse(null);
     }
 
     @Override
     public Car update(Car car) {
-        return repository.update(car);
+        return repository.save(car);
     }
 
     @Override
     public void delete(String s) {
 
-        repository.delete(s);
+        repository.deleteById(s);
 
     }
 

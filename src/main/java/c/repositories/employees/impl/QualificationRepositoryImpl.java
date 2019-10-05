@@ -1,4 +1,4 @@
-package c.repositories.employees.impl;
+/*package c.repositories.employees.impl;
 
 import c.domain.employee.Qualification;
 import c.repositories.employees.QualificationRepository;
@@ -66,3 +66,5 @@ public class QualificationRepositoryImpl implements QualificationRepository {
     }
 
 }
+
+ */

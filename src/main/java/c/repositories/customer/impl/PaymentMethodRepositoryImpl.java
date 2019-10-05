@@ -1,4 +1,4 @@
-package c.repositories.customer.impl;
+/*package c.repositories.customer.impl;
 
 import c.domain.customer.PaymentMethod;
 import c.repositories.customer.PaymentMethodRepository;
@@ -66,3 +66,5 @@ public class PaymentMethodRepositoryImpl implements PaymentMethodRepository {
 
     }
 }
+
+ */

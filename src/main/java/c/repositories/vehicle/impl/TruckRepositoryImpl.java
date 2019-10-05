@@ -1,4 +1,4 @@
-package c.repositories.vehicle.impl;
+/*package c.repositories.vehicle.impl;
 
 import c.domain.vehicle.Truck;
 import c.repositories.vehicle.TruckRepository;
@@ -69,3 +69,5 @@ public class TruckRepositoryImpl implements TruckRepository {
     }
 
 }
+
+ */

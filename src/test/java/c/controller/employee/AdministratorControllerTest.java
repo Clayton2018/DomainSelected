@@ -22,7 +22,7 @@ public class AdministratorControllerTest {
     @Autowired
     private TestRestTemplate restTemplate;
 
-    private String baseURL="http://localhost:8080/driver";
+    private String baseURL="http://localhost:8080/administrator";
 
     @Test
     public void create() {

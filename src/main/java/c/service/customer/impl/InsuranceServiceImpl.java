@@ -2,11 +2,12 @@ package c.service.customer.impl;
 
 import c.domain.customer.Insurance;
 import c.repositories.customer.InsuranceRepository;
-import c.repositories.customer.impl.InsuranceRepositoryImpl;
 import c.service.customer.InsuranceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Service("InsuranceServiceImpl")
@@ -19,7 +20,7 @@ public class InsuranceServiceImpl implements InsuranceService {
 
     public InsuranceServiceImpl() {
 
-        this.repository = InsuranceRepositoryImpl.getInsuranceRepo();
+        //this.repository = InsuranceRepositoryImpl.getInsuranceRepo();
 
     }
 
@@ -36,28 +37,31 @@ public class InsuranceServiceImpl implements InsuranceService {
 
     @Override
     public Set<Insurance> getAll() {
-        return repository.getAll();
+
+        List<Insurance> insuranceList = (List<Insurance>) repository.findAll();
+        return new HashSet<>(insuranceList);
+
     }
 
     @Override
     public Insurance create(Insurance insurance) {
-        return repository.create(insurance);
+        return repository.save(insurance);
     }
 
     @Override
     public Insurance read(Integer integer) {
-        return repository.read(integer);
+        return repository.findById(integer).orElse(null);
     }
 
     @Override
     public Insurance update(Insurance insurance) {
-        return repository.update(insurance);
+        return repository.save(insurance);
     }
 
     @Override
     public void delete(Integer integer) {
 
-        repository.delete(integer);
+        repository.deleteById(integer);
 
     }
 }

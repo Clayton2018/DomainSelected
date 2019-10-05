@@ -2,11 +2,12 @@ package c.service.booking.impl;
 
 import c.domain.booking.Booking;
 import c.repositories.booking.BookingRepository;
-import c.repositories.booking.impl.BookingRepositoryImpl;
 import c.service.booking.BookingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Service("BookingServiceImpl")
@@ -18,7 +19,7 @@ public class BookingServiceImpl implements BookingService {
 
     public BookingServiceImpl() {
 
-        this.repository = BookingRepositoryImpl.getBookingRepo();
+        //this.repository = BookingRepositoryImpl.getBookingRepo();
 
     }
 
@@ -35,28 +36,33 @@ public class BookingServiceImpl implements BookingService {
 
     @Override
     public Set<Booking> getAll() {
-        return repository.getAll();
+
+        List<Booking> bookingList = (List<Booking>) repository.findAll();
+        return new HashSet<>(bookingList);
+
     }
 
     @Override
     public Booking create(Booking booking) {
-        return repository.create(booking);
+        return repository.save(booking);
     }
 
     @Override
     public Booking read(Integer integer) {
-        return repository.read(integer);
+
+        return repository.findById(integer).orElse(null);
+
     }
 
     @Override
     public Booking update(Booking booking) {
-        return repository.update(booking);
+        return repository.save(booking);
     }
 
     @Override
     public void delete(Integer integer) {
 
-        repository.delete(integer);
+        repository.deleteById(integer);
 
     }
 }

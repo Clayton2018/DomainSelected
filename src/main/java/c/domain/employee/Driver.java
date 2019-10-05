@@ -1,5 +1,8 @@
 package c.domain.employee;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Driver extends Employee {
 
 

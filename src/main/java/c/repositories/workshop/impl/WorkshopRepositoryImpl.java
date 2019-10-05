@@ -1,4 +1,4 @@
-package c.repositories.workshop.impl;
+/*package c.repositories.workshop.impl;
 
 import c.domain.workshop.Workshop;
 import c.repositories.workshop.WorkshopRepository;
@@ -68,3 +68,5 @@ public class WorkshopRepositoryImpl implements WorkshopRepository {
 
     }
 }
+
+ */

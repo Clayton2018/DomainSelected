@@ -1,4 +1,4 @@
-package c.repositories.employees.impl;
+/*package c.repositories.employees.impl;
 
 import c.domain.employee.Administrator;
 import c.repositories.employees.AdministratorRepository;
@@ -64,3 +64,5 @@ public class AdministratorRepositoryImpl implements AdministratorRepository {
 
     }
 }
+
+ */

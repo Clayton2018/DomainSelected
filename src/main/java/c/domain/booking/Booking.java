@@ -2,8 +2,10 @@ package c.domain.booking;
 
 import c.domain.customer.Customer;
 
+import javax.persistence.Entity;
 import java.util.Objects;
 
+@Entity
 public class Booking {
 
     private int bookingId, customerId, vehicleReg;

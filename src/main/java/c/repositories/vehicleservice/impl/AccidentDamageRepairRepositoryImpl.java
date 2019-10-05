@@ -1,4 +1,4 @@
-package c.repositories.vehicleservice.impl;
+/*package c.repositories.vehicleservice.impl;
 
 import c.domain.vehicleservice.AccidentDamageRepair;
 import c.repositories.vehicleservice.AccidentDamageRepairRepository;
@@ -66,3 +66,5 @@ public class AccidentDamageRepairRepositoryImpl implements AccidentDamageRepairR
 
     }
 }
+
+ */

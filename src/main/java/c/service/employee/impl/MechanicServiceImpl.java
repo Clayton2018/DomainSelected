@@ -2,11 +2,12 @@ package c.service.employee.impl;
 
 import c.domain.employee.Mechanic;
 import c.repositories.employees.MechanicRepository;
-import c.repositories.employees.impl.MechanicRepositoryImpl;
 import c.service.employee.MechanicService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Service("MechanicServiceImpl")
@@ -19,7 +20,7 @@ public class MechanicServiceImpl implements MechanicService {
 
     public MechanicServiceImpl(){
 
-        this.repository = MechanicRepositoryImpl.getMechanicRepo();
+        //this.repository = MechanicRepositoryImpl.getMechanicRepo();
 
     }
 
@@ -37,30 +38,32 @@ public class MechanicServiceImpl implements MechanicService {
 
     @Override
     public Set<Mechanic> getAll() {
-        return repository.getAll();
+
+        List<Mechanic> mechanicList = (List<Mechanic>) repository.findAll();
+        return new HashSet<>(mechanicList);
     }
 
     @Override
     public Mechanic create(Mechanic mechanic) {
-        return repository.create(mechanic);
+        return repository.save(mechanic);
     }
 
     @Override
     public Mechanic read(Integer integer) {
 
-        return repository.read(integer);
+        return repository.findById(integer).orElse(null);
 
     }
 
     @Override
     public Mechanic update(Mechanic mechanic) {
-        return repository.update(mechanic);
+        return repository.save(mechanic);
     }
 
     @Override
     public void delete(Integer integer) {
 
-         repository.delete(integer);
+         repository.deleteById(integer);
 
     }
 }

@@ -1,4 +1,4 @@
-package c.repositories.customer.impl;
+/*package c.repositories.customer.impl;
 
 import c.domain.customer.Customer;
 import c.repositories.customer.CustomerRepository;
@@ -68,3 +68,5 @@ public class CustomerRepositoryImpl implements CustomerRepository {
 
     }
 }
+
+ */

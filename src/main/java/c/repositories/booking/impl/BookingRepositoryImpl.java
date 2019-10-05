@@ -1,4 +1,4 @@
-package c.repositories.booking.impl;
+/*package c.repositories.booking.impl;
 
 import c.domain.booking.Booking;
 import c.repositories.booking.BookingRepository;
@@ -68,3 +68,5 @@ public class BookingRepositoryImpl implements BookingRepository {
 
     }
 }
+
+ */

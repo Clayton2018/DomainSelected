@@ -1,8 +1,10 @@
 package c.domain.employee;
 
+import javax.persistence.Entity;
 import java.lang.reflect.Array;
 import java.util.Arrays;
 
+@Entity
 public class Cleaner extends Employee{
 
       private int[] officeRoom;

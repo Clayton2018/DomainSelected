@@ -1,7 +1,9 @@
 package c.domain.vehicle;
 
+import javax.persistence.Entity;
 import java.util.Objects;
 
+@Entity
 public class Suv extends Vehicle{
 
     private String bodyStyle;

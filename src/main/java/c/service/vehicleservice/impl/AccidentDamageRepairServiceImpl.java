@@ -2,11 +2,12 @@ package c.service.vehicleservice.impl;
 
 import c.domain.vehicleservice.AccidentDamageRepair;
 import c.repositories.vehicleservice.AccidentDamageRepairRepository;
-import c.repositories.vehicleservice.impl.AccidentDamageRepairRepositoryImpl;
 import c.service.vehicleservice.AccidentDamageRepairService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Service("AccidentDamageRepairServiceImpl")
@@ -18,7 +19,7 @@ public class AccidentDamageRepairServiceImpl implements AccidentDamageRepairServ
 
     public AccidentDamageRepairServiceImpl() {
 
-        this.repository = AccidentDamageRepairRepositoryImpl.getAccidentDamageRepairRepo();
+        //this.repository = AccidentDamageRepairRepositoryImpl.getAccidentDamageRepairRepo();
 
     }
 
@@ -35,28 +36,30 @@ public class AccidentDamageRepairServiceImpl implements AccidentDamageRepairServ
 
     @Override
     public Set<AccidentDamageRepair> getAll() {
-        return repository.getAll();
+
+        List<AccidentDamageRepair> accidentDamageRepairList = (List<AccidentDamageRepair>) repository.findAll();
+        return new HashSet<>(accidentDamageRepairList);
     }
 
     @Override
     public AccidentDamageRepair create(AccidentDamageRepair accidentDamageRepair) {
-        return repository.create(accidentDamageRepair);
+        return repository.save(accidentDamageRepair);
     }
 
     @Override
     public AccidentDamageRepair read(Integer integer) {
-        return repository.read(integer);
+        return repository.findById(integer).orElse(null);
     }
 
     @Override
     public AccidentDamageRepair update(AccidentDamageRepair accidentDamageRepair) {
-        return repository.update(accidentDamageRepair);
+        return repository.save(accidentDamageRepair);
     }
 
     @Override
     public void delete(Integer integer) {
 
-        repository.delete(integer);
+        repository.deleteById(integer);
 
     }
 }

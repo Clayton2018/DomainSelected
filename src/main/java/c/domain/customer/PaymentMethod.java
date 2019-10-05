@@ -2,6 +2,9 @@ package c.domain.customer;
 
 //import javafx.util.Builder;
 
+import javax.persistence.Entity;
+
+@Entity
 public class PaymentMethod {
 
     private double amount;

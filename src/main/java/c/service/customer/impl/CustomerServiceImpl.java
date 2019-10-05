@@ -2,11 +2,12 @@ package c.service.customer.impl;
 
 import c.domain.customer.Customer;
 import c.repositories.customer.CustomerRepository;
-import c.repositories.customer.impl.CustomerRepositoryImpl;
 import c.service.customer.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Service("CustomerServiceImpl")
@@ -19,7 +20,7 @@ public class CustomerServiceImpl implements CustomerService {
 
     public CustomerServiceImpl() {
 
-        this.repository = CustomerRepositoryImpl.getCustomerRepo();
+        //this.repository = CustomerRepositoryImpl.getCustomerRepo();
 
     }
 
@@ -38,28 +39,30 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public Set<Customer> getAll() {
-        return repository.getAll();
+
+        List<Customer> customerList = (List<Customer>) repository.findAll();
+        return new HashSet<>(customerList);
     }
 
     @Override
     public Customer create(Customer customer) {
-        return repository.create(customer);
+        return repository.save(customer);
     }
 
     @Override
     public Customer read(Integer integer) {
-        return repository.read(integer);
+        return repository.findById(integer).orElse(null);
     }
 
     @Override
     public Customer update(Customer customer) {
-        return repository.update(customer);
+        return repository.save(customer);
     }
 
     @Override
     public void delete(Integer integer) {
 
-        repository.delete(integer);
+        repository.deleteById(integer);
 
     }
 }

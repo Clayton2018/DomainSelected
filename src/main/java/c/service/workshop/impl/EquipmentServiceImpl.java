@@ -2,11 +2,12 @@ package c.service.workshop.impl;
 
 import c.domain.workshop.Equipment;
 import c.repositories.workshop.EquipmentRepository;
-import c.repositories.workshop.impl.EquipmentRepositoryImpl;
 import c.service.workshop.EquipmentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Service("EquipmentServiceImpl")
@@ -18,7 +19,7 @@ public class EquipmentServiceImpl implements EquipmentService {
 
     public EquipmentServiceImpl() {
 
-        this.repository = EquipmentRepositoryImpl.getEquipmentRepo();
+        //this.repository = EquipmentRepositoryImpl.getEquipmentRepo();
 
     }
 
@@ -36,28 +37,31 @@ public class EquipmentServiceImpl implements EquipmentService {
 
     @Override
     public Set<Equipment> getAll() {
-        return repository.getAll();
+
+        List<Equipment> equipmentList = (List<Equipment>) repository.findAll();
+        return new HashSet<>(equipmentList);
+
     }
 
     @Override
     public Equipment create(Equipment equipment) {
-        return repository.create(equipment);
+        return repository.save(equipment);
     }
 
     @Override
     public Equipment read(Integer integer) {
-        return repository.read(integer);
+        return repository.findById(integer).orElse(null);
     }
 
     @Override
     public Equipment update(Equipment equipment) {
-        return repository.update(equipment);
+        return repository.save(equipment);
     }
 
     @Override
     public void delete(Integer integer) {
 
-        repository.delete(integer);
+        repository.deleteById(integer);
 
     }
 }

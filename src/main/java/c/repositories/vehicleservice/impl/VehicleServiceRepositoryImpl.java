@@ -1,4 +1,4 @@
-package c.repositories.vehicleservice.impl;
+/*package c.repositories.vehicleservice.impl;
 
 import c.domain.vehicleservice.VehicleService;
 import c.repositories.vehicleservice.VehicleServiceRepository;
@@ -67,3 +67,5 @@ public class VehicleServiceRepositoryImpl implements VehicleServiceRepository {
 
     }
 }
+
+ */

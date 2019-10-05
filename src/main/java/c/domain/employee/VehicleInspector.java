@@ -2,8 +2,10 @@ package c.domain.employee;
 
 import c.domain.vehicle.Vehicle;
 
+import javax.persistence.Entity;
 import java.util.List;
 
+@Entity
 public class VehicleInspector extends Employee{
 
     private String specialization;

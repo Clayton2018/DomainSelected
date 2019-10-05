@@ -1,5 +1,8 @@
 package c.domain.customer;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Insurance {
 
 

@@ -1,4 +1,4 @@
-package c.repositories.workshop.impl;
+/*package c.repositories.workshop.impl;
 
 import c.domain.workshop.Equipment;
 import c.repositories.workshop.EquipmentRepository;
@@ -68,3 +68,5 @@ public class EquipmentRepositoryImpl implements EquipmentRepository {
 
     }
 }
+
+ */

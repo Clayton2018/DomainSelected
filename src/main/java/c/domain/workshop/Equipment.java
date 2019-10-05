@@ -2,8 +2,10 @@ package c.domain.workshop;
 
 import c.domain.customer.Customer;
 
+import javax.persistence.Entity;
 import java.util.Objects;
 
+@Entity
 public class Equipment {
 
     private int equipNum;

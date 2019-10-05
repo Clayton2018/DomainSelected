@@ -1,4 +1,4 @@
-package c.repositories.employees.impl;
+/*package c.repositories.employees.impl;
 
 import c.domain.employee.Cleaner;
 import c.repositories.employees.CleanerRepository;
@@ -65,3 +65,5 @@ public class CleanerRepositoryImpl implements CleanerRepository {
 
     }
 }
+
+ */
