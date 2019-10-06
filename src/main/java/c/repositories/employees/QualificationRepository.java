@@ -8,6 +8,6 @@ import java.util.Set;
 @Repository
 public interface QualificationRepository extends CrudRepository<Qualification, Integer> {
 
-    Set<Qualification> getAll();
+    //Set<Qualification> getAll();
 
 }

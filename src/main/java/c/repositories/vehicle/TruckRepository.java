@@ -8,6 +8,6 @@ import java.util.Set;
 @Repository
 public interface TruckRepository extends CrudRepository<Truck, String> {
 
-    Set<Truck>getAll();
+    //Set<Truck>getAll();
 
 }

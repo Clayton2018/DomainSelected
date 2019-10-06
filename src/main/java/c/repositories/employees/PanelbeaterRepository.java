@@ -8,6 +8,6 @@ import java.util.Set;
 @Repository
 public interface PanelbeaterRepository extends CrudRepository<Panelbeater, Integer> {
 
-    Set<Panelbeater>getAll();
+    //Set<Panelbeater>getAll();
 
 }

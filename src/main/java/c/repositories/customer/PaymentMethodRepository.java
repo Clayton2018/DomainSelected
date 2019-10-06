@@ -8,6 +8,6 @@ import java.util.Set;
 @Repository
 public interface PaymentMethodRepository extends CrudRepository<PaymentMethod, String> {
 
-    Set<PaymentMethod>getAll();
+    //Set<PaymentMethod>getAll();
 
 }

@@ -8,6 +8,6 @@ import java.util.Set;
 @Repository
 public interface SUVRepository extends CrudRepository<Suv, String> {
 
-    Set<Suv>getAll();
+    //Set<Suv>getAll();
 
 }

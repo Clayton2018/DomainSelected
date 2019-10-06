@@ -8,6 +8,6 @@ import java.util.Set;
 @Repository
 public interface MechanicRepository extends CrudRepository<Mechanic, Integer> {
 
-    Set<Mechanic>getAll();
+    //Set<Mechanic>getAll();
 
 }

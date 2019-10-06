@@ -8,6 +8,6 @@ import java.util.Set;
 @Repository
 public interface CustomerRepository extends CrudRepository<Customer, Integer> {
 
-    Set<Customer>getAll();
+    //Set<Customer>getAll();
 
 }

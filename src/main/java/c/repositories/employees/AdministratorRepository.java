@@ -8,6 +8,6 @@ import java.util.Set;
 @Repository
 public interface AdministratorRepository extends CrudRepository<Administrator, Integer> {
 
-    Set<Administrator> getAll();
+    //Set<Administrator> getAll();
 
 }

@@ -9,6 +9,6 @@ import java.util.Set;
 @Repository
 public interface CarRepository extends CrudRepository<Car, String> {
 
-    Set<Car>getAll();
+    //Set<Car>getAll();
 
 }

@@ -5,7 +5,7 @@ import c.domain.vehicle.Vehicle;
 
 public class CustomerFactory {
 
-    public static Customer getCustomer(int cID, String name, String lastName, String number, String address, Vehicle vehicle){
+    public static Customer getCustomer(int cID, String name, String lastName, String number, String address){
 
         return new Customer.Builder()
                 .customerID(cID)

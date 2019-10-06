@@ -8,6 +8,6 @@ import java.util.Set;
 @Repository
 public interface InvoiceRepository extends CrudRepository<Invoice, Integer> {
 
-    Set<Invoice>getAll();
+    //Set<Invoice>getAll();
 
 }

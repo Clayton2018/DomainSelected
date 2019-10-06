@@ -8,6 +8,6 @@ import java.util.Set;
 @Repository
 public interface DriverRepository extends CrudRepository<Driver, Integer> {
 
-    Set<Driver>getAll();
+    //Set<Driver>getAll();
 
 }

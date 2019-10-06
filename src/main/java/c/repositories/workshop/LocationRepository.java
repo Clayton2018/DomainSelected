@@ -9,6 +9,6 @@ import java.util.Set;
 @Repository
 public interface LocationRepository extends CrudRepository<Location, Integer> {
 
-    Set<Location>getAll();
+    //Set<Location>getAll();
 
 }

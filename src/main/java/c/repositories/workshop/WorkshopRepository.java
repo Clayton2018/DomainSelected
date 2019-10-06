@@ -8,6 +8,6 @@ import java.util.Set;
 @Repository
 public interface WorkshopRepository extends CrudRepository<Workshop, String> {
 
-    Set<Workshop> getAll();
+    //Set<Workshop> getAll();
 
 }

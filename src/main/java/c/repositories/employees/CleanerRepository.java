@@ -8,6 +8,6 @@ import java.util.Set;
 @Repository
 public interface CleanerRepository extends CrudRepository<Cleaner, Integer> {
 
-    Set<Cleaner> getAll();
+    //Set<Cleaner> getAll();
 
 }

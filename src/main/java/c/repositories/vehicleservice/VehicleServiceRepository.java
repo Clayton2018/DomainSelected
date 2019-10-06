@@ -8,6 +8,6 @@ import java.util.Set;
 @Repository
 public interface VehicleServiceRepository extends CrudRepository<VehicleService, Integer> {
 
-    Set<VehicleService>getAll();
+    //Set<VehicleService>getAll();
 
 }

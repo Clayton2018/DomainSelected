@@ -8,6 +8,6 @@ import java.util.Set;
 @Repository
 public interface AccidentDamageRepairRepository extends CrudRepository<AccidentDamageRepair, Integer> {
 
-    Set<AccidentDamageRepair>getAll();
+    //Set<AccidentDamageRepair>getAll();
 
 }
