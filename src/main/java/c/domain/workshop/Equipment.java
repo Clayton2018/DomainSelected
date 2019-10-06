@@ -3,13 +3,11 @@ package c.domain.workshop;
 import c.domain.customer.Customer;
 
 import javax.persistence.Entity;
-import javax.persistence.Id;
 import java.util.Objects;
 
 @Entity
-public class Equipment {
+public class Equipment extends Workshop {
 
-    @Id
     private int equipNum;
     private String equipName;
 

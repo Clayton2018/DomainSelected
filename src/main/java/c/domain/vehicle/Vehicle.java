@@ -1,8 +1,8 @@
 package c.domain.vehicle;
 
-import org.springframework.data.annotation.Id;
+import javax.persistence.Id;
 
-import javax.persistence.Entity;
+
 import javax.persistence.MappedSuperclass;
 
 @MappedSuperclass

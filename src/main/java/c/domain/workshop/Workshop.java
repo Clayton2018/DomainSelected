@@ -1,10 +1,10 @@
 package c.domain.workshop;
 
-import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
 import java.util.Objects;
 
-@Entity
+@MappedSuperclass
 public class Workshop {
 
     @Id
