@@ -3,11 +3,13 @@ package c.domain.employee;
 //import javafx.util.Builder;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
 public class Qualification {
 
 
+    @Id
     private int qualificationID;
     private String qualificationName;
     private String instituteName;
