@@ -1,7 +1,6 @@
 package c.domain.employee;
 
 import c.domain.vehicle.Vehicle;
-import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.Entity;
 import java.util.ArrayList;
@@ -11,7 +10,6 @@ import java.util.List;
 @Entity
 public class Mechanic extends Employee {
 
-    @JsonProperty("duties")
     private String duties;
     private List<Vehicle> vehicles;
 

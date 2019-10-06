@@ -7,7 +7,6 @@ import java.util.Objects;
 @Entity
 public class Truck extends Vehicle {
 
-    @Id
     private String type;
 
     private String loadCapacity;
