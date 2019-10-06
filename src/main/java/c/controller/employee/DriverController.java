@@ -9,11 +9,10 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Set;
 
+@RestController
+@RequestMapping("/driver")
 public class DriverController {
 
-    @RestController
-    @RequestMapping("driver")
-    public class CleanerController {
 
         @Autowired
         @Qualifier("DriverServiceImpl")
@@ -58,5 +57,3 @@ public class DriverController {
         }
 
     }
-
-}
