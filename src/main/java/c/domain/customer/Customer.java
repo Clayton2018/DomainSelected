@@ -6,9 +6,9 @@ import javax.persistence.Id;
 @Entity
 public class Customer {
 
-
     @Id
     private int customerID;
+
     private String customerName;
     private String customerSurname;
     private String customerAddress;
@@ -46,6 +46,26 @@ public class Customer {
 
     public String getCustomerPhoneNum() {
         return customerPhoneNum;
+    }
+
+    public void setCustomerID(int customerID) {
+        this.customerID = customerID;
+    }
+
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
+    }
+
+    public void setCustomerSurname(String customerSurname) {
+        this.customerSurname = customerSurname;
+    }
+
+    public void setCustomerAddress(String customerAddress) {
+        this.customerAddress = customerAddress;
+    }
+
+    public void setCustomerPhoneNum(String customerPhoneNum) {
+        this.customerPhoneNum = customerPhoneNum;
     }
 
     public static class Builder {

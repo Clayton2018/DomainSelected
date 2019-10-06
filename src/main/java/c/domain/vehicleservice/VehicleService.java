@@ -5,6 +5,8 @@ import c.domain.vehicle.Vehicle;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -14,8 +16,6 @@ public class VehicleService {
     @Id
      private int serviceID;
      private String serviceDate, serviceDescription;
-     private Vehicle vehicle;
-     private Customer customer;
 
 
     public VehicleService(){
@@ -27,7 +27,6 @@ public class VehicleService {
         this.serviceID = builder.serviceID;
         this.serviceDate = builder.serviceDate;
         this.serviceDescription = builder.serviceDescription;
-        this.customer = builder.customer;
 
     }
 
@@ -55,29 +54,10 @@ public class VehicleService {
         this.serviceDescription = serviceDescription;
     }
 
-    public Customer getCustomer() {
-        return customer;
-    }
-
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
-    }
-
-    public Vehicle getVehicle() {
-        return vehicle;
-    }
-
-    public void setVehicle(Vehicle vehicle) {
-        this.vehicle = vehicle;
-    }
-
-
     public static class VehicleServiceBuilder {
 
         private int serviceID;
         private String serviceDate, serviceDescription;
-        private Customer customer;
-        private Vehicle vehicle;
 
 
         public VehicleServiceBuilder serviceID(int serviceID){
@@ -94,23 +74,9 @@ public class VehicleService {
 
         }
 
-        public VehicleServiceBuilder serviceDescription(String serviceDescription){
+        public VehicleServiceBuilder serviceDescription(String serviceDescription) {
 
             this.serviceDescription = serviceDescription;
-            return this;
-
-        }
-
-        public VehicleServiceBuilder customer(Customer customer){
-
-            this.customer = customer;
-            return this;
-
-        }
-
-        public VehicleServiceBuilder vehicle(Vehicle vehicle){
-
-            this.vehicle = vehicle;
             return this;
 
         }
@@ -125,26 +91,23 @@ public class VehicleService {
 
             return "VehicleServiceRepository \n" + "VehicleServiceRepository ID: " + serviceID
                     + "\n" + "Date: " + serviceDate + "\nDescription: "
-                    + serviceDescription + "\nVehicle: " + vehicle
-                    + "\nCustomer: " + customer;
+                    + serviceDescription;
 
         }
 
         @Override
         public boolean equals(Object o) {
             if (this == o) return true;
-            if (o == null || getClass() != o.getClass()) return false;
-            VehicleServiceBuilder builder = (VehicleServiceBuilder) o;
-            return serviceID == builder.serviceID &&
-                    serviceDate.equals(builder.serviceDate) &&
-                    serviceDescription.equals(builder.serviceDescription) &&
-                    customer.equals(builder.customer) &&
-                    vehicle.equals(builder.vehicle);
+            if (!(o instanceof VehicleServiceBuilder)) return false;
+            VehicleServiceBuilder that = (VehicleServiceBuilder) o;
+            return serviceID == that.serviceID &&
+                    Objects.equals(serviceDate, that.serviceDate) &&
+                    Objects.equals(serviceDescription, that.serviceDescription);
         }
 
         @Override
         public int hashCode() {
-            return Objects.hash(serviceID, serviceDate, serviceDescription, customer, vehicle);
+            return Objects.hash(serviceID, serviceDate, serviceDescription);
         }
     }
 
