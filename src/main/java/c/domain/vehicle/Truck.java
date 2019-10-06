@@ -68,8 +68,8 @@ public class Truck extends Vehicle {
         public String toString() {
             return "TruckBuilder{" +
                     "type='" + type + '\'' +
-                    ", loadCapacity='" + loadCapacity + '\'' +
-                    '}';
+                    ", loadCapacity='" + loadCapacity + '\''
+                    + super.toString();
         }
 
         @Override

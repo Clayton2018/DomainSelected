@@ -4,6 +4,7 @@ package c.domain.customer;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import java.util.Objects;
 
 @Entity
 public class PaymentMethod {
@@ -77,11 +78,25 @@ public class PaymentMethod {
             return "Builder\n" +
                     "amount=" + amount +
                     ", payType='" + payType + '\'' +
-                    ", payDate='" + payDate + '\'' + "\n";
+                    ", payDate='" + payDate + '\'' +
+                    super.toString();
 
         }//end toString
 
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (!(o instanceof Builder)) return false;
+            Builder builder = (Builder) o;
+            return Double.compare(builder.amount, amount) == 0 &&
+                    Objects.equals(payType, builder.payType) &&
+                    Objects.equals(payDate, builder.payDate);
+        }
 
+        @Override
+        public int hashCode() {
+            return Objects.hash(amount, payType, payDate);
+        }
     }//end builder inner class
 
 

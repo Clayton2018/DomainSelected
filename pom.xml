@@ -19,6 +19,7 @@
     <version>2.1.6.RELEASE</version>
   </parent>
 
+
   <dependencies>
 
     <dependency>
@@ -61,11 +62,6 @@
       <artifactId>h2</artifactId>
       <scope>runtime</scope>
     </dependency>
-
-
-
-
-
 
   </dependencies>
 

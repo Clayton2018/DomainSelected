@@ -48,7 +48,7 @@ public class Suv extends Vehicle{
         public String toString() {
             return "SuvBuilder{" +
                     "bodyStyle='" + bodyStyle + '\'' +
-                    '}';
+                    super.toString();
         }
 
         @Override

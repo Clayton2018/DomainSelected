@@ -66,7 +66,7 @@ public class Car extends Vehicle {
         public String toString() {
             return "CarBuilder{" +
                     "bodyStyle='" + bodyStyle + '\'' +
-                    '}';
+                    super.toString();
         }
 
         @Override
