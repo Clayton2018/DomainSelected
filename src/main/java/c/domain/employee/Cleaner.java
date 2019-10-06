@@ -3,11 +3,12 @@ package c.domain.employee;
 import javax.persistence.Entity;
 import java.lang.reflect.Array;
 import java.util.Arrays;
+import java.util.Objects;
 
 @Entity
 public class Cleaner extends Employee{
 
-      private int[] officeRoom;
+      private int officeRoom;
 
 
     public Cleaner(){
@@ -21,19 +22,19 @@ public class Cleaner extends Employee{
 
     }
 
-    public int[] getOfficeRoom() {
+    public int getOfficeRoom() {
         return officeRoom;
     }
 
-    public void setOfficeRoom(int[] officeRoom) {
+    public void setOfficeRoom(int officeRoom) {
         this.officeRoom = officeRoom;
     }
 
     public static class CleanerBuilder extends Employee.Builder{
 
-        private int[] officeRoom;
+        private int officeRoom;
 
-        public CleanerBuilder OfficeRoom(int[] officeRoom){
+        public CleanerBuilder OfficeRoom(int officeRoom){
 
             this.officeRoom = officeRoom;
             return this;
@@ -44,24 +45,21 @@ public class Cleaner extends Employee{
         public String toString() {
 
             return "CleanerBuilder{" + " Office:"
-                    + Arrays.toString(officeRoom) + "}\n" +
+                    + officeRoom + "}\n" +
                     super.toString();
         }
 
         @Override
-        public boolean equals(Object obj) {
-
-            if(this == obj) return true;
-            if(obj == null || getClass() != obj.getClass()) return false;
-
-            CleanerBuilder that = (CleanerBuilder) obj;
-
-            return Arrays.equals(officeRoom, that.officeRoom);
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (!(o instanceof CleanerBuilder)) return false;
+            CleanerBuilder that = (CleanerBuilder) o;
+            return officeRoom == that.officeRoom;
         }
 
         @Override
         public int hashCode() {
-            return Arrays.hashCode(officeRoom);
+            return Objects.hash(officeRoom);
         }
 
         @Override

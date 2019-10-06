@@ -6,12 +6,12 @@ import javax.persistence.Entity;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 @Entity
 public class Mechanic extends Employee {
 
     private String duties;
-    private List<Vehicle> vehicles;
 
 
     public Mechanic(){
@@ -22,8 +22,6 @@ public class Mechanic extends Employee {
 
         super(builder);
         this.duties = builder.duties;
-        this.vehicles = builder.vehicles;
-
 
     }
 
@@ -36,18 +34,9 @@ public class Mechanic extends Employee {
         this.duties = duties;
     }
 
-    public List<Vehicle> getVehicles() {
-        return vehicles;
-    }
-
-    public void setVehicles(List<Vehicle> vehicles) {
-        this.vehicles = vehicles;
-    }
-
     public static class MechanicBuilder extends Employee.Builder{
 
         private String duties;
-        private List<Vehicle> vehicles;
 
         public MechanicBuilder(){
 
@@ -58,13 +47,6 @@ public class Mechanic extends Employee {
         public MechanicBuilder duties(String duties){
 
             this.duties = duties;
-            return this;
-
-        }
-
-        public MechanicBuilder vehicles(List<Vehicle> vehicles){
-
-            this.vehicles = vehicles;
             return this;
 
         }
@@ -80,33 +62,23 @@ public class Mechanic extends Employee {
         public String toString(){
 
             return "MechanicBuilder{" + "duties: "
-                    + duties + "\n" + "Vehicles{"
-                    + vehicles + super.toString();
+                    + duties + "\n" + super.toString();
 
         }
 
         @Override
         public boolean equals(Object o) {
-
             if (this == o) return true;
-            if (o == null || getClass() != o.getClass()) return false;
-
+            if (!(o instanceof MechanicBuilder)) return false;
             MechanicBuilder that = (MechanicBuilder) o;
-
-            if(duties != null ? !duties.equals(that.duties) : that.duties != null)
-                return false;
-            return vehicles != null ? vehicles.equals(that.vehicles): that.vehicles == null;
-
+            return Objects.equals(duties, that.duties);
         }
 
         @Override
-        public int hashCode(){
-
-            int result = duties != null ? duties.hashCode() : 0;
-            result = 20 * result + (vehicles != null ? vehicles.hashCode(): 0);
-            return result;
-
+        public int hashCode() {
+            return Objects.hash(duties);
         }
+
     }
 
 

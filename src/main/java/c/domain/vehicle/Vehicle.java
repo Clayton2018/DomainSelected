@@ -11,7 +11,6 @@ public abstract class Vehicle {
 
     @Id
     private String registrationNumber;
-
     private String manufacturer;
     private String lastServiceDate;
     private int modelYear;
