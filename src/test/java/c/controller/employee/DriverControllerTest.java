@@ -2,8 +2,10 @@ package c.controller.employee;
 
 import c.Factory.employee.DriverFactory;
 import c.domain.employee.Driver;
+import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.junit.runners.MethodSorters;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
@@ -15,6 +17,7 @@ import static junit.framework.TestCase.assertEquals;
 import static org.hibernate.validator.internal.util.Contracts.assertNotNull;
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment= SpringBootTest.WebEnvironment.RANDOM_PORT)
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class DriverControllerTest {
 
     @Autowired
@@ -23,7 +26,7 @@ public class DriverControllerTest {
     private String baseURL="http://localhost:8080/driver";
 
     @Test
-    public void create() {
+    public void acreate() {
 
         Driver driver = DriverFactory.getDriver(1, "clay","petersen" ,"driver", "21", "021", "22/05/19", "code b");
         driver.setEmpID(1);
@@ -36,24 +39,24 @@ public class DriverControllerTest {
     }
 
     @Test
-    public void findById() {
+    public void bfindById() {
 
         Driver driver = restTemplate.getForObject(baseURL + "/find/1", Driver.class);
 
-        assertNotNull(driver);
+        assertEquals(driver.getEmpID(), 1);
 
     }
 
     @Test
-    public void update() {
+    public void cupdate() {
 
         int id = 1;
         Driver driver = restTemplate.getForObject(baseURL + "/find/" + id, Driver.class);
         driver.setEmpName("george");
 
-        restTemplate.put(baseURL + "/update/" + id, driver);
+        restTemplate.put(baseURL + "/update/" + 2, driver);
 
-        Driver updatedDriver = restTemplate.getForObject(baseURL + "/update/" + id, Driver.class);
+        Driver updatedDriver = restTemplate.getForObject(baseURL + "/update/" + 2, Driver.class);
 
         assertNotNull(updatedDriver);
 

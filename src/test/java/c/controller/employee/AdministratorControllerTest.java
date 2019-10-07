@@ -40,7 +40,7 @@ public class AdministratorControllerTest {
     @Test
     public void findById() {
 
-        Administrator admin = restTemplate.getForObject(baseURL + "/find/1", Administrator.class);
+        Administrator admin = restTemplate.getForObject(baseURL + "/find/" + "1", Administrator.class);
 
         assertNotNull(admin);
 
