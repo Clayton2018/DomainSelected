@@ -1,8 +1,6 @@
 package c.service.workshop.impl;
 
 import c.domain.workshop.Location;
-import c.repositories.workshop.LocationRepository;
-import c.service.workshop.LocationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
