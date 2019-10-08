@@ -21,7 +21,8 @@ public class DriverController {
         @PostMapping("/new")
         public Driver create(@RequestBody Driver driver){
 
-            //Driver driver = DriverFactory.getDriver(1, "Paul", "Red", "driver", "21 there","021", "29/05/19", "code B");
+
+            driver.setEmpID(1);
 
             return service.create(driver);
 
