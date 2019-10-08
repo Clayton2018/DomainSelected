@@ -1,5 +1,6 @@
 package c.domain.vehicle;
 
+import javax.persistence.Column;
 import javax.persistence.Id;
 
 
@@ -10,6 +11,7 @@ public abstract class Vehicle {
 
 
     @Id
+    @Column(name = "reg_num" , nullable = false, columnDefinition = "VARCHAR(25)")
     private String regNum;
     private String manufacturer;
     private String lastServiceDate;

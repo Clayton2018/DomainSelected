@@ -1,5 +1,6 @@
 package c.domain.workshop;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
@@ -8,6 +9,9 @@ import java.util.Objects;
 @Entity
 public class Workshop extends Location{
 
+
+    @Id
+    @Column(name = "workshop_name" , nullable = false, columnDefinition = "VARCHAR(25)")
     private String workshopName;
     private int noOfEmployees;
     private int locationID;

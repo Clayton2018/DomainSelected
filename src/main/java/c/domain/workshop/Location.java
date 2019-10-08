@@ -9,7 +9,7 @@ import java.util.Objects;
 @MappedSuperclass
 public abstract class Location {
 
-    @Id
+
     private int areaCode;
     private String areaName;
 

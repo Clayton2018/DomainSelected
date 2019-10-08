@@ -7,10 +7,12 @@ import javax.persistence.Id;
 import java.util.Objects;
 
 @Entity
-public class Equipment extends Workshop {
+public class Equipment {
 
+    @Id
     private int equipNum;
     private String equipName;
+    private String workshopName;
 
     public Equipment(){}
 
@@ -18,6 +20,7 @@ public class Equipment extends Workshop {
 
         this.equipName = builder.equipName;
         this.equipNum = builder.equipNum;
+        this.workshopName = builder.workshopName;
 
     }
 
@@ -37,10 +40,19 @@ public class Equipment extends Workshop {
         this.equipName = equipName;
     }
 
+    public String getWorkshopName() {
+        return workshopName;
+    }
+
+    public void setWorkshopName(String workshopName) {
+        this.workshopName = workshopName;
+    }
+
     public static class EquipmentBuilder{
 
         private int equipNum;
         private String equipName;
+        private String workshopName;
 
         public EquipmentBuilder(){
 
@@ -60,6 +72,13 @@ public class Equipment extends Workshop {
 
         }
 
+        public EquipmentBuilder workshopName(String workshopName){
+
+            this.workshopName = workshopName;
+            return this;
+
+        }
+
         public Equipment build(){
 
             return new Equipment(this);
@@ -70,7 +89,8 @@ public class Equipment extends Workshop {
         public String toString(){
 
             return "Equipment\n" + "ID: " + equipNum
-                    + "Name: " + equipName + "\n";
+                    + ", " + "Name: " + equipName +
+                    ", " + "Workshop name" + workshopName + "\n";
 
         }
 
