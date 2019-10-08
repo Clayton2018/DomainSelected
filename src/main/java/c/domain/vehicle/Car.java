@@ -45,7 +45,7 @@ public class Car extends Vehicle {
         public CarBuilder copy(Car car){
 
             this.manufacturer(car.getManufacturer());
-            this.registrationNumber(car.getRegistrationNumber());
+            this.regNum(car.getRegNum());
             this.lastServiceDate(car.getLastServiceDate());
             this.modelYear(car.getModelYear());
             this.vinNum(car.getVinNum());

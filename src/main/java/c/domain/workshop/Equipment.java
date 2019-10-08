@@ -3,6 +3,7 @@ package c.domain.workshop;
 import c.domain.customer.Customer;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.util.Objects;
 
 @Entity
@@ -17,6 +18,7 @@ public class Equipment extends Workshop {
 
         this.equipName = builder.equipName;
         this.equipNum = builder.equipNum;
+
     }
 
     public int getEquipNum() {
@@ -40,7 +42,9 @@ public class Equipment extends Workshop {
         private int equipNum;
         private String equipName;
 
-        public EquipmentBuilder(){}
+        public EquipmentBuilder(){
+
+        }
 
         public EquipmentBuilder equipNum(int equipNum){
 

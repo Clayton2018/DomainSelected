@@ -10,7 +10,7 @@ public abstract class Vehicle {
 
 
     @Id
-    private String registrationNumber;
+    private String regNum;
     private String manufacturer;
     private String lastServiceDate;
     private int modelYear;
@@ -24,7 +24,7 @@ public abstract class Vehicle {
     protected Vehicle(Builder builder){
 
         this.manufacturer = builder.manufacturer;
-        this.registrationNumber = builder.registrationNumber;
+        this.regNum = builder.regNum;
         this.lastServiceDate = builder.lastServiceDate;
         this.engineCapacity = builder.engineCapacity;
         this.modelYear = builder.modelYear;
@@ -41,12 +41,12 @@ public abstract class Vehicle {
         this.manufacturer = manufacturer;
     }
 
-    public String getRegistrationNumber() {
-        return registrationNumber;
+    public String getRegNum() {
+        return regNum;
     }
 
     public void setRegistrationNumber(String registrationNumber) {
-        this.registrationNumber = registrationNumber;
+        this.regNum = registrationNumber;
     }
 
     public String getLastServiceDate() {
@@ -92,7 +92,7 @@ public abstract class Vehicle {
     public static abstract class Builder{
 
         private  String manufacturer;
-        private String registrationNumber;
+        private String regNum;
         private String lastServiceDate;
         private int modelYear;
         private int vinNum;
@@ -105,9 +105,9 @@ public abstract class Vehicle {
             return this;
         }
 
-        public Builder registrationNumber(String registrationNumber){
+        public Builder regNum(String registrationNumber){
 
-            this.registrationNumber = registrationNumber;
+            this.regNum = registrationNumber;
             return this;
 
         }
@@ -152,7 +152,7 @@ public abstract class Vehicle {
         public String toString(){
 
             return "Vehicle \n" + "manufacturer: " + manufacturer
-                    + "\n" + "registration: " + registrationNumber + "\nlast service date: "
+                    + "\n" + "registration: " + regNum + "\nlast service date: "
                     + lastServiceDate + "\nModel year: " + modelYear
                     + "\nvin number: " + vinNum
                     + "\nEngine capacity: " + engineCapacity
