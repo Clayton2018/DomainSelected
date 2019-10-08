@@ -1,13 +1,17 @@
 package c.domain.workshop;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 import java.util.Objects;
 
-@MappedSuperclass
-public class Workshop {
+@Entity
+public class Workshop extends Location{
+
 
     @Id
+    @Column(name = "workshop_name" , nullable = false, columnDefinition = "VARCHAR(25)")
     private String workshopName;
     private int noOfEmployees;
     private int locationID;
@@ -18,6 +22,7 @@ public class Workshop {
 
     public Workshop(WorkshopBuilder builder) {
 
+        super(builder);
         this.workshopName = builder.workshopName;
         this.noOfEmployees = builder.noOfEmployees;
         this.locationID = builder.locationID;
@@ -41,12 +46,18 @@ public class Workshop {
         return equipmentID;
     }
 
-    public static class WorkshopBuilder{
+    public static class WorkshopBuilder extends Location.Builder{
 
         private String workshopName;
         private int noOfEmployees;
         private int locationID;
         private int equipmentID;
+
+        public WorkshopBuilder(){
+
+            super();
+
+        }
 
         public WorkshopBuilder workshopName(String workshopName){
 
@@ -100,7 +111,7 @@ public class Workshop {
 
         @Override
         public String toString() {
-            return "WorkshopBuilder" + "\n" +
+            return "WorkshopBuilder" + "\n" + super.toString() +
                     "workshopName='" + workshopName + '\'' +
                     ", noOfEmployees=" + noOfEmployees +
                     ", locationID=" + locationID +

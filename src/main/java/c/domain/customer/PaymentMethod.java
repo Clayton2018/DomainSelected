@@ -2,6 +2,7 @@ package c.domain.customer;
 
 //import javafx.util.Builder;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.util.Objects;
@@ -10,6 +11,7 @@ import java.util.Objects;
 public class PaymentMethod {
 
     @Id
+    @Column(name = "pay_type" , nullable = false, columnDefinition = "VARCHAR(25)")
     private String payType;
     private double amount;
     private String payDate;

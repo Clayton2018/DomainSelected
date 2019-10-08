@@ -1,11 +1,14 @@
 package c.domain.workshop;
 
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
 import java.util.Objects;
 
-@Entity
-public class Location extends Workshop {
+@MappedSuperclass
+public abstract class Location {
+
 
     private int areaCode;
     private String areaName;
@@ -38,7 +41,7 @@ public class Location extends Workshop {
         this.areaName = areaName;
     }
 
-    public static class Builder{
+    public static abstract class Builder{
 
          private int areaCode;
          private String areaName;
@@ -58,25 +61,7 @@ public class Location extends Workshop {
 
         }
 
-        public Location build(){
-
-            return new Location(this);
-
-        }
-
-        @Override
-        public boolean equals(Object o) {
-            if (this == o) return true;
-            if (!(o instanceof Builder)) return false;
-            Builder builder = (Builder) o;
-            return areaCode == builder.areaCode &&
-                    areaName.equals(builder.areaName);
-        }
-
-        @Override
-        public int hashCode() {
-            return Objects.hash(areaCode, areaName);
-        }
+        public abstract Location build();
 
         @Override
         public String toString() {

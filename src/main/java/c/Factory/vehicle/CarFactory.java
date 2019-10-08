@@ -4,12 +4,12 @@ import c.domain.vehicle.Car;
 
 public class CarFactory {
 
-    public static Car getCar(String bStyle, String manufacturer, String regNum, String lastSD, int mY, int vN, int eC, double mileage){
+    public static Car getCar(String regNum, String bStyle, String manufacturer, String lastSD, int mY, int vN, int eC, double mileage){
 
         return (Car) new Car.CarBuilder()
                 .bodyStyle(bStyle)
                 .manufacturer(manufacturer)
-                .registrationNumber(regNum)
+                .regNum(regNum)
                 .lastServiceDate(lastSD)
                 .modelYear(mY)
                 .vinNum(vN)
