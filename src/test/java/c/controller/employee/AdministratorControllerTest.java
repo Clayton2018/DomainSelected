@@ -27,8 +27,8 @@ public class AdministratorControllerTest {
     @Test
     public void create() {
 
-        Administrator admin = AdministratorFactory.getAdministrator(1, "front desk");
-        admin.setEmpID(1);
+        Administrator admin = AdministratorFactory.getAdministrator("1", "front desk",null,null,null, null, 200, null);
+
 
         ResponseEntity<Administrator> postResponse = restTemplate.postForEntity(baseURL + "/new", admin, Administrator.class);
 
@@ -51,7 +51,6 @@ public class AdministratorControllerTest {
 
         int id = 1;
         Administrator admin = restTemplate.getForObject(baseURL + "/find/" + id, Administrator.class);
-        admin.setEmpName("george");
 
         restTemplate.put(baseURL + "/update/" + id, admin);
 

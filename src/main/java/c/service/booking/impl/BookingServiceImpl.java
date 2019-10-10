@@ -49,9 +49,9 @@ public class BookingServiceImpl implements BookingService {
     }
 
     @Override
-    public Booking read(Integer integer) {
+    public Booking read(String str) {
 
-        return repository.findById(integer).orElse(null);
+        return repository.findById(str).orElse(null);
 
     }
 
@@ -61,9 +61,9 @@ public class BookingServiceImpl implements BookingService {
     }
 
     @Override
-    public void delete(Integer integer) {
+    public void delete(String str) {
 
-        repository.deleteById(integer);
+        repository.deleteById(str);
 
     }
 }

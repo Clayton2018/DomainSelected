@@ -22,9 +22,6 @@ public class DriverController {
         @PostMapping("/new")
         public Driver create(@RequestBody Driver driver){
 
-
-            driver.setEmpID(1);
-
             return service.create(driver);
 
         }

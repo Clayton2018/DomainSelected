@@ -7,6 +7,7 @@ import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.util.Objects;
 
 @Entity
 public class Qualification {
@@ -15,7 +16,7 @@ public class Qualification {
     @Id
     @GeneratedValue(generator = "uuid2")
     @GenericGenerator(name = "uuid2", strategy = "uuid2")
-    private int qualificationID;
+    private String qualificationID;
     private String qualificationName;
     private String instituteName;
     private String qualificationDuration;
@@ -33,7 +34,7 @@ public class Qualification {
 
     }
 
-    public int getQualificationID() {
+    public String getQualificationID() {
         return qualificationID;
     }
 
@@ -52,13 +53,13 @@ public class Qualification {
 
     public static class Builder{
 
-        private int qualificationID;
+        private String qualificationID;
         private String qualificationName;
         private String instituteName;
         private String qualificationDuration;
 
 
-        public Builder qualificationID(int qualificationID){
+        public Builder qualificationID(String qualificationID){
 
             this.qualificationID = qualificationID;
             return this;
@@ -113,6 +114,21 @@ public class Qualification {
 
         }
 
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (!(o instanceof Builder)) return false;
+            Builder builder = (Builder) o;
+            return qualificationID.equals(builder.qualificationID) &&
+                    Objects.equals(qualificationName, builder.qualificationName) &&
+                    Objects.equals(instituteName, builder.instituteName) &&
+                    Objects.equals(qualificationDuration, builder.qualificationDuration);
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(qualificationID, qualificationName, instituteName, qualificationDuration);
+        }
     }
 
 

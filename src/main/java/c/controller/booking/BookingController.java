@@ -26,7 +26,7 @@ public class BookingController {
     }
 
     @GetMapping(path = "/find/{id}")
-    public Booking findById(@PathVariable int id){
+    public Booking findById(@PathVariable String id){
 
         Booking bk = bookingService.read(id);
         return bk;
@@ -41,7 +41,7 @@ public class BookingController {
     }
 
     @DeleteMapping(path ="/delete/{id}")
-    public void delete(@PathVariable int id){
+    public void delete(@PathVariable String id){
 
         bookingService.delete(id);
 
