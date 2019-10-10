@@ -1,4 +1,4 @@
-package c.controller;
+/*package c.controller;
 
 
 import org.springframework.http.HttpStatus;
@@ -21,3 +21,5 @@ public class IndexController {
 
 
 }
+
+ */

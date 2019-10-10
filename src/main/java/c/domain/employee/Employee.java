@@ -2,7 +2,10 @@ package c.domain.employee;
 
 //import javafx.util.Builder;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
@@ -10,6 +13,8 @@ import javax.persistence.MappedSuperclass;
 public abstract class Employee {
 
     @Id
+    @GeneratedValue(generator = "uuid2")
+    @GenericGenerator(name = "uuid2", strategy = "uuid2")
     private int empID;
     private String empJobTitle;
     private String empName;
@@ -17,7 +22,7 @@ public abstract class Employee {
     private String empTel;
     private String empAddress;
     private String employmentDate;
-    private double empPay;
+    private double salary;
 
 
     public Employee(){}
@@ -32,6 +37,7 @@ public abstract class Employee {
         this.empTel = builder.empTel;
         this.empAddress = builder.empAddress;
         this.employmentDate = builder.employmentDate;
+        this.salary = builder.salary;
 
     }
 
@@ -39,64 +45,32 @@ public abstract class Employee {
         return empID;
     }
 
-    public void setEmpID(int empID) {
-        this.empID = empID;
-    }
-
     public String getEmpJobTitle() {
         return empJobTitle;
-    }
-
-    public void setEmpJobTitle(String empJobTitle) {
-        this.empJobTitle = empJobTitle;
     }
 
     public String getEmpName() {
         return empName;
     }
 
-    public void setEmpName(String empName) {
-        this.empName = empName;
-    }
-
     public String getEmpSurname() {
         return empSurname;
-    }
-
-    public void setEmpSurname(String empSurname) {
-        this.empSurname = empSurname;
     }
 
     public String getEmpTel() {
         return empTel;
     }
 
-    public void setEmpTel(String empTel) {
-        this.empTel = empTel;
-    }
-
     public String getEmpAddress() {
         return empAddress;
-    }
-
-    public void setEmpAddress(String empAddress) {
-        this.empAddress = empAddress;
     }
 
     public String getEmploymentDate() {
         return employmentDate;
     }
 
-    public void setEmploymentDate(String employmentDate) {
-        this.employmentDate = employmentDate;
-    }
-
-    public double getEmpPay() {
-        return empPay;
-    }
-
-    public void setEmpPay(double empPay) {
-        this.empPay = empPay;
+    public double getSalary() {
+        return salary;
     }
 
     public static abstract class Builder{
@@ -108,7 +82,7 @@ public abstract class Employee {
         private String empTel;
         private String empAddress;
         private String employmentDate;
-        private double empPay;
+        private double salary;
 
 
         public Builder empID(int empID){
@@ -160,9 +134,9 @@ public abstract class Employee {
 
         }
 
-        public Builder empPay(double empPay){
+        public Builder salary(double salary){
 
-            this.empPay = empPay;
+            this.salary = salary;
             return this;
 
         }
@@ -178,7 +152,7 @@ public abstract class Employee {
                     + empSurname + "\nAddress: " + empAddress
                     + "\nTel number: " + empTel
                     + "\nEmployment date: " + employmentDate +"\n"
-                    + "Salary/wages (Hourly rate): R" + empPay + "\n";
+                    + "Salary: R" + salary + "\n";
 
         }
 

@@ -1,6 +1,7 @@
 package c.domain.employee;
 
 import javax.persistence.Entity;
+import java.util.Objects;
 
 @Entity
 public class Driver extends Employee {
@@ -62,6 +63,11 @@ public class Driver extends Employee {
         }
 
         @Override
+        public int hashCode() {
+            return Objects.hash(licenseType);
+        }
+
+        @Override
         public boolean equals(Object o) {
 
             if (this == o) return true;
@@ -69,7 +75,7 @@ public class Driver extends Employee {
 
             DriverBuilder that = (DriverBuilder) o;
 
-            return licenseType != null ? licenseType.equals(that.licenseType): that.licenseType == null;
+            return Objects.equals(licenseType, that.licenseType);
 
         }
 

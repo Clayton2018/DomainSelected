@@ -1,6 +1,9 @@
 package c.domain.vehicleservice;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import java.util.Objects;
 
@@ -8,6 +11,8 @@ import java.util.Objects;
 public class AccidentDamageRepair {
 
     @Id
+    @GeneratedValue(generator = "uuid2")
+    @GenericGenerator(name = "uuid2", strategy = "uuid2")
     private int accidentCode;  //rating of the extent of the damage.
     private String accidentDescription;
     private double estimatedCostToRepair;

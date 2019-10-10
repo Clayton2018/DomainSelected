@@ -10,6 +10,7 @@ import java.util.Set;
 
 @RestController
 @RequestMapping("/vehicleservice")
+@CrossOrigin(origins="http://localhost:4200")
 public class VehicleServiceController {
 
     @Autowired

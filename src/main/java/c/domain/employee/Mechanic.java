@@ -11,7 +11,7 @@ import java.util.Objects;
 @Entity
 public class Mechanic extends Employee {
 
-    private String duties;
+    private String allocatedBay;
 
 
     public Mechanic(){
@@ -21,22 +21,18 @@ public class Mechanic extends Employee {
     private Mechanic(MechanicBuilder builder){
 
         super(builder);
-        this.duties = builder.duties;
+        this.allocatedBay = builder.allocatedBay;
 
     }
 
 
     public String getDuties() {
-        return duties;
-    }
-
-    public void setDuties(String duties) {
-        this.duties = duties;
+        return allocatedBay;
     }
 
     public static class MechanicBuilder extends Employee.Builder{
 
-        private String duties;
+        private String allocatedBay;
 
         public MechanicBuilder(){
 
@@ -46,7 +42,7 @@ public class Mechanic extends Employee {
 
         public MechanicBuilder duties(String duties){
 
-            this.duties = duties;
+            this.allocatedBay = duties;
             return this;
 
         }
@@ -61,8 +57,8 @@ public class Mechanic extends Employee {
         @Override
         public String toString(){
 
-            return "MechanicBuilder{" + "duties: "
-                    + duties + "\n" + super.toString();
+            return "MechanicBuilder{" + "Allocated work bay: "
+                    + allocatedBay + "\n" + super.toString();
 
         }
 
@@ -71,12 +67,12 @@ public class Mechanic extends Employee {
             if (this == o) return true;
             if (!(o instanceof MechanicBuilder)) return false;
             MechanicBuilder that = (MechanicBuilder) o;
-            return Objects.equals(duties, that.duties);
+            return Objects.equals(allocatedBay, that.allocatedBay);
         }
 
         @Override
         public int hashCode() {
-            return Objects.hash(duties);
+            return Objects.hash(allocatedBay);
         }
 
     }

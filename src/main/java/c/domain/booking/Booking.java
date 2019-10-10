@@ -1,20 +1,25 @@
 package c.domain.booking;
 
 import c.domain.customer.Customer;
+import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.util.Date;
 import java.util.Objects;
 
 @Entity
 public class Booking {
 
     @Id
+    @GeneratedValue(generator = "uuid2")
+    @GenericGenerator(name = "uuid2", strategy = "uuid2")
     private int bookingId;
-
     private int customerId;
     private int vehicleReg;
-    private String bookingDate;
+    private Date bookingDate;
+    private String desc;
 
     public Booking() {
 
@@ -26,6 +31,8 @@ public class Booking {
         this.customerId = builder.customerId;
         this.vehicleReg = builder.vehicleReg;
         this.bookingDate = builder.bookingDate;
+        this.desc = builder.desc;
+
 
     }
 
@@ -41,14 +48,19 @@ public class Booking {
         return vehicleReg;
     }
 
-    public String getBookingDate() {
+    public Date getBookingDate() {
         return bookingDate;
+    }
+
+    public String getDesc() {
+        return desc;
     }
 
     public static class BookingBuilder{
 
         private int bookingId, customerId, vehicleReg;
-        private String bookingDate;
+        private Date bookingDate;
+        private String desc;
 
         public BookingBuilder() {
 
@@ -75,9 +87,16 @@ public class Booking {
 
         }
 
-        public BookingBuilder bookingDate(String bookingDate){
+        public BookingBuilder bookingDate(Date bookingDate){
 
             this.bookingDate = bookingDate;
+            return this;
+
+        }
+
+        public BookingBuilder desc(String desc){
+
+            this.desc = desc;
             return this;
 
         }
@@ -88,6 +107,7 @@ public class Booking {
             this.customerId = booking.customerId;
             this.vehicleReg = booking.vehicleReg;
             this.bookingDate = booking.bookingDate;
+            this.desc = booking.desc;
             return this;
 
         }
@@ -106,22 +126,24 @@ public class Booking {
             return bookingId == that.bookingId &&
                     customerId == that.customerId &&
                     vehicleReg == that.vehicleReg &&
-                    bookingDate.equals(that.bookingDate);
+                    Objects.equals(bookingDate, that.bookingDate) &&
+                    Objects.equals(desc, that.desc);
         }
 
         @Override
         public int hashCode() {
-            return Objects.hash(bookingId, customerId, vehicleReg, bookingDate);
+            return Objects.hash(bookingId, customerId, vehicleReg, bookingDate, desc);
         }
 
         @Override
         public String toString() {
-            return "BookingBuilder" + "\n" +
+            return "BookingBuilder{" +
                     "bookingId=" + bookingId +
                     ", customerId=" + customerId +
                     ", vehicleReg=" + vehicleReg +
-                    ", bookingDate='" + bookingDate + '\'' +
-                    "\n";
+                    ", bookingDate=" + bookingDate +
+                    ", desc='" + desc + '\'' +
+                    '}';
         }
 
     }//end inner class

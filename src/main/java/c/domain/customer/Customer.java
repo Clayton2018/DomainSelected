@@ -1,18 +1,23 @@
 package c.domain.customer;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
 public class Customer {
 
     @Id
+    @GeneratedValue(generator = "uuid2")
+    @GenericGenerator(name = "uuid2", strategy = "uuid2")
     private int customerID;
-
     private String customerName;
     private String customerSurname;
     private String customerAddress;
     private String customerPhoneNum;
+    private boolean hasInsurance = false;
 
     public Customer() {
 
@@ -25,6 +30,7 @@ public class Customer {
         this.customerSurname = builder.customerSurname;
         this.customerAddress = builder.customerAddress;
         this.customerPhoneNum = builder.customerPhoneNum;
+        this.hasInsurance = builder.hasInsurance;
 
     }
 
@@ -68,6 +74,14 @@ public class Customer {
         this.customerPhoneNum = customerPhoneNum;
     }
 
+    public boolean isHasInsurance() {
+        return hasInsurance;
+    }
+
+    public void setHasInsurance(boolean hasInsurance) {
+        this.hasInsurance = hasInsurance;
+    }
+
     public static class Builder {
 
         private int customerID;
@@ -75,6 +89,7 @@ public class Customer {
         private String customerSurname;
         private String customerAddress;
         private String customerPhoneNum;
+        private boolean hasInsurance;
 
         public Builder customerID(int customerID) {
 
@@ -111,9 +126,28 @@ public class Customer {
 
         }
 
+        public Builder hasInsurance(boolean hasInsurance){
+
+            this.hasInsurance = hasInsurance;
+            return this;
+
+        }
+
         public Customer build(){
 
             return new Customer(this);
+
+        }
+
+        public Builder copy(Customer customer){
+
+            this.customerID = customer.customerID;
+            this.customerName = customer.customerName;
+            this.customerSurname = customer.customerSurname;
+            this.customerAddress = customer.customerAddress;
+            this.customerPhoneNum = customer.customerPhoneNum;
+            this.hasInsurance = customer.hasInsurance;
+            return this;
 
         }
 
@@ -124,7 +158,8 @@ public class Customer {
             return "Customer \n" + "customerID: " + customerID
                     + "\n" + "Name: " + customerName + "\nSurname: "
                     + customerSurname + "\nAddress: " + customerAddress
-                    + "\nTel number: " + customerPhoneNum;
+                    + "\nTel number: " + customerPhoneNum
+                    + "Insurance: " + hasInsurance;
 
         }
 

@@ -2,8 +2,10 @@ package c.domain.vehicleservice;
 
 import c.domain.customer.Customer;
 import c.domain.vehicle.Vehicle;
+import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import java.util.Arrays;
 import java.util.List;
@@ -14,8 +16,10 @@ public class VehicleService {
 
 
     @Id
-     private int serviceID;
-     private String serviceDate, serviceDescription;
+    @GeneratedValue(generator = "uuid2")
+    @GenericGenerator(name = "uuid2", strategy = "uuid2")
+    private int serviceID;
+    private String serviceDate, serviceDescription;
 
 
     public VehicleService(){

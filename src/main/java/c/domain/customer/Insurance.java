@@ -1,6 +1,9 @@
 package c.domain.customer;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
@@ -8,6 +11,8 @@ public class Insurance {
 
 
     @Id
+    @GeneratedValue(generator = "uuid2")
+    @GenericGenerator(name = "uuid2", strategy = "uuid2")
     private int insuranceId;
     private String insurerName;
     private String insuranceCoverage;   //Example: accidental, 3rd party, full, minor.

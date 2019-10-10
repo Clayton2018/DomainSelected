@@ -1,7 +1,10 @@
 package c.domain.workshop;
 
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 import java.util.Objects;
@@ -9,7 +12,9 @@ import java.util.Objects;
 @MappedSuperclass
 public abstract class Location {
 
-
+    @Id
+    @GeneratedValue(generator = "uuid2")
+    @GenericGenerator(name = "uuid2", strategy = "uuid2")
     private int areaCode;
     private String areaName;
 

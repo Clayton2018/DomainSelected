@@ -11,6 +11,7 @@ import java.util.Set;
 
 @RestController
 @RequestMapping("/panelbeater")
+@CrossOrigin(origins="http://localhost:4200")
 public class PanelBeaterController {
 
 

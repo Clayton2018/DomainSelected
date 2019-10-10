@@ -10,6 +10,7 @@ import java.util.Set;
 
 @RestController
 @RequestMapping("/accidentdamagerepair")
+@CrossOrigin(origins="http://localhost:4200")
 public class AccidentDamageRepairController {
 
     @Autowired

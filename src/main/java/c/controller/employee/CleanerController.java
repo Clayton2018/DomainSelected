@@ -12,6 +12,7 @@ import java.util.Set;
 
 @RestController
 @RequestMapping("cleaner")
+@CrossOrigin(origins="http://localhost:4200")
 public class CleanerController {
 
     @Autowired

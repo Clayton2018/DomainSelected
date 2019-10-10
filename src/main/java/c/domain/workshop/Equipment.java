@@ -1,8 +1,10 @@
 package c.domain.workshop;
 
 import c.domain.customer.Customer;
+import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import java.util.Objects;
 
@@ -10,6 +12,8 @@ import java.util.Objects;
 public class Equipment {
 
     @Id
+    @GeneratedValue(generator = "uuid2")
+    @GenericGenerator(name = "uuid2", strategy = "uuid2")
     private int equipNum;
     private String equipName;
     private String workshopName;

@@ -2,7 +2,10 @@ package c.domain.employee;
 
 //import javafx.util.Builder;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
@@ -10,6 +13,8 @@ public class Qualification {
 
 
     @Id
+    @GeneratedValue(generator = "uuid2")
+    @GenericGenerator(name = "uuid2", strategy = "uuid2")
     private int qualificationID;
     private String qualificationName;
     private String instituteName;

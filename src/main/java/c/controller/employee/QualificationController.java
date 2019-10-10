@@ -10,6 +10,7 @@ import java.util.Set;
 
 @RestController
 @RequestMapping("/qualification")
+@CrossOrigin(origins="http://localhost:4200")
 public class QualificationController {
 
     @Autowired

@@ -10,8 +10,6 @@ import java.util.Objects;
 public class Workshop extends Location{
 
 
-    @Id
-    @Column(name = "workshop_name" , nullable = false, columnDefinition = "VARCHAR(25)")
     private String workshopName;
     private int noOfEmployees;
     private int locationID;
