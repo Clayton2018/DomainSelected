@@ -1,6 +1,7 @@
 package c.domain.employee;
 
 import javax.persistence.Entity;
+import java.util.Objects;
 
 @Entity
 public class Administrator extends Employee {
@@ -53,16 +54,16 @@ public class Administrator extends Employee {
 
         @Override
         public boolean equals(Object o) {
-
             if (this == o) return true;
-            if (o == null || getClass() != o.getClass()) return false;
-
+            if (!(o instanceof AdminBuilder)) return false;
             AdminBuilder that = (AdminBuilder) o;
-
-            return adminType != null ? adminType.equals(that.adminType): that.adminType == null;
-
+            return Objects.equals(adminType, that.adminType);
         }
 
+        @Override
+        public int hashCode() {
+            return Objects.hash(adminType);
+        }
     }
 
 }
