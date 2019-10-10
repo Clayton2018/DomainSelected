@@ -15,9 +15,9 @@ public class Booking {
     @Id
     @GeneratedValue(generator = "uuid2")
     @GenericGenerator(name = "uuid2", strategy = "uuid2")
-    private int bookingId;
-    private int customerId;
-    private int vehicleReg;
+    private String bookingId;
+    private String customerId;
+    private String vehicleReg;
     private Date bookingDate;
     private String desc;
 
@@ -36,15 +36,15 @@ public class Booking {
 
     }
 
-    public int getBookingId() {
+    public String getBookingId() {
         return bookingId;
     }
 
-    public int getCustomerId() {
+    public String getCustomerId() {
         return customerId;
     }
 
-    public int getVehicleReg() {
+    public String getVehicleReg() {
         return vehicleReg;
     }
 
@@ -58,7 +58,7 @@ public class Booking {
 
     public static class BookingBuilder{
 
-        private int bookingId, customerId, vehicleReg;
+        private String bookingId, customerId, vehicleReg;
         private Date bookingDate;
         private String desc;
 
@@ -66,21 +66,21 @@ public class Booking {
 
         }//end inner class constructor
 
-        public BookingBuilder bookingId(int bookingId){
+        public BookingBuilder bookingId(String bookingId){
 
             this.bookingId = bookingId;
             return this;
 
         }
 
-        public BookingBuilder customerId(int customerId){
+        public BookingBuilder customerId(String customerId){
 
             this.customerId = customerId;
             return this;
 
         }
 
-        public BookingBuilder vehicleReg(int vehicleReg){
+        public BookingBuilder vehicleReg(String vehicleReg){
 
             this.vehicleReg = vehicleReg;
             return this;

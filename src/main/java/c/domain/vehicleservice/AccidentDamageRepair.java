@@ -13,7 +13,8 @@ public class AccidentDamageRepair {
     @Id
     @GeneratedValue(generator = "uuid2")
     @GenericGenerator(name = "uuid2", strategy = "uuid2")
-    private int accidentCode;  //rating of the extent of the damage.
+    private String accidentID;
+    private String accidentCode;  // of the extent of the damage.
     private String accidentDescription;
     private double estimatedCostToRepair;
     private String estimatedRepairTime;
@@ -24,6 +25,7 @@ public class AccidentDamageRepair {
 
     public AccidentDamageRepair(AccidentDamageRepairBuilder builder) {
 
+        this.accidentID = builder.accidentID;
         this.accidentCode = builder.accidentCode;
         this.accidentDescription = builder.accidentDescription;
         this.estimatedCostToRepair = builder.estimatedCostToRepair;
@@ -31,7 +33,11 @@ public class AccidentDamageRepair {
 
     }
 
-    public int getAccidentCode() {
+    public String getAccidentID() {
+        return accidentID;
+    }
+
+    public String getAccidentCode() {
         return accidentCode;
     }
 
@@ -49,12 +55,20 @@ public class AccidentDamageRepair {
 
     public static class AccidentDamageRepairBuilder{
 
-        private int accidentCode;  //rating of the extent of the damage.
+        private String accidentID;
+        private String accidentCode;  //rating of the extent of the damage.
         private String accidentDescription;
         private double estimatedCostToRepair;
         private String estimatedRepairTime;
 
-        public AccidentDamageRepairBuilder accidentCode(int accidentCode){
+        public AccidentDamageRepairBuilder accidentID(String accidentID){
+
+            this.accidentID = accidentID;
+            return this;
+
+        }
+
+        public AccidentDamageRepairBuilder accidentCode(String accidentCode){
 
             this.accidentCode = accidentCode;
             return this;
@@ -90,6 +104,7 @@ public class AccidentDamageRepair {
 
         public AccidentDamageRepairBuilder copy(AccidentDamageRepair accident){
 
+            this.accidentID(accident.getAccidentID());
             this.accidentCode(accident.getAccidentCode());
             this.accidentDescription(accident.getAccidentDescription());
             this.estimatedCostToRepair(accident.getEstimatedCostToRepair());

@@ -12,7 +12,7 @@ public class Customer {
     @Id
     @GeneratedValue(generator = "uuid2")
     @GenericGenerator(name = "uuid2", strategy = "uuid2")
-    private int customerID;
+    private String customerID;
     private String customerName;
     private String customerSurname;
     private String customerAddress;
@@ -34,7 +34,7 @@ public class Customer {
 
     }
 
-    public int getCustomerID() {
+    public String getCustomerID() {
         return customerID;
     }
 
@@ -54,26 +54,6 @@ public class Customer {
         return customerPhoneNum;
     }
 
-    public void setCustomerID(int customerID) {
-        this.customerID = customerID;
-    }
-
-    public void setCustomerName(String customerName) {
-        this.customerName = customerName;
-    }
-
-    public void setCustomerSurname(String customerSurname) {
-        this.customerSurname = customerSurname;
-    }
-
-    public void setCustomerAddress(String customerAddress) {
-        this.customerAddress = customerAddress;
-    }
-
-    public void setCustomerPhoneNum(String customerPhoneNum) {
-        this.customerPhoneNum = customerPhoneNum;
-    }
-
     public boolean isHasInsurance() {
         return hasInsurance;
     }
@@ -84,14 +64,14 @@ public class Customer {
 
     public static class Builder {
 
-        private int customerID;
+        private String customerID;
         private String customerName;
         private String customerSurname;
         private String customerAddress;
         private String customerPhoneNum;
         private boolean hasInsurance;
 
-        public Builder customerID(int customerID) {
+        public Builder customerID(String customerID) {
 
             this.customerID = customerID;
             return this;

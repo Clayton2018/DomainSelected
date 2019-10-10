@@ -3,11 +3,9 @@ package c.domain.workshop;
 
 import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
-import java.util.Objects;
 
 @MappedSuperclass
 public abstract class Location {
@@ -15,7 +13,7 @@ public abstract class Location {
     @Id
     @GeneratedValue(generator = "uuid2")
     @GenericGenerator(name = "uuid2", strategy = "uuid2")
-    private int areaCode;
+    private String areaID;
     private String areaName;
 
 
@@ -25,36 +23,28 @@ public abstract class Location {
 
     public Location(Builder builder){
 
-        this.areaCode = builder.areaCode;
+        this.areaID = builder.areaID;
         this.areaName = builder.areaName;
 
     }
 
-    public int getAreaCode() {
-        return areaCode;
+    public String getAreaID() {
+        return areaID;
     }
 
     public String getAreaName() {
         return areaName;
     }
 
-    public void setAreaCode(int areaCode) {
-        this.areaCode = areaCode;
-    }
-
-    public void setAreaName(String areaName) {
-        this.areaName = areaName;
-    }
-
     public static abstract class Builder{
 
-         private int areaCode;
+         private String areaID;
          private String areaName;
 
 
-        public Builder areaCode(int areaCode){
+        public Builder areaID(String areaID){
 
-            this.areaCode = areaCode;
+            this.areaID = areaID;
             return this;
 
         }
@@ -71,7 +61,7 @@ public abstract class Location {
         @Override
         public String toString() {
             return "Builder " + "\n" +
-                    "areaCode=" + areaCode +
+                    "areaID=" + areaID +
                     ", areaName='" + areaName + '\'' +
                     "\n";
         }

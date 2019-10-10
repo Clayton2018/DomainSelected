@@ -1,13 +1,14 @@
 package c.Factory.customer;
 
 import c.domain.customer.Insurance;
+import c.util.IdGenerator;
 
 public class InsuranceFactory {
 
-    public static Insurance getInsurance(int iId, String iName, String iCoverage){
+    public static Insurance getInsurance(String iName, String iCoverage){
 
         return new Insurance.Builder()
-                   .insuranceId(iId)
+                   .insuranceId(IdGenerator.generateId())
                    .insurerName(iName)
                    .insuranceCoverage(iCoverage)
                    .build();

@@ -1,13 +1,14 @@
 package c.Factory.workshop;
 
 import c.domain.workshop.Equipment;
+import c.util.IdGenerator;
 
 public class EquipmentFactory {
 
-    public static Equipment getEquipment(int eNum, String eName, String workshopName){
+    public static Equipment getEquipment(String eName, String workshopName){
 
         return new Equipment.EquipmentBuilder()
-                .equipNum(eNum)
+                .equipID(IdGenerator.generateId())
                 .equipName(eName)
                 .workshopName(workshopName)
                 .build();

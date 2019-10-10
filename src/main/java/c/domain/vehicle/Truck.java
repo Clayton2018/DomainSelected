@@ -26,22 +26,20 @@ public class Truck extends Vehicle {
         return type;
     }
 
-    public void setType(String type) {
-        this.type = type;
-    }
-
     public String getLoadCapacity() {
         return loadCapacity;
-    }
-
-    public void setLoadCapacity(String loadCapacity) {
-        this.loadCapacity = loadCapacity;
     }
 
     public static class TruckBuilder extends Vehicle.Builder{
 
         private String type;
         private String loadCapacity;
+
+        public TruckBuilder(){
+
+            super();
+
+        }
 
 
         public TruckBuilder type(String type){
@@ -54,6 +52,21 @@ public class Truck extends Vehicle {
         public TruckBuilder loadCapacity(String loadCap){
 
             this.loadCapacity = loadCap;
+            return this;
+
+        }
+
+        public TruckBuilder copy(Truck truck){
+
+            this.manufacturer(truck.getManufacturer());
+            this.regNum(truck.getRegNum());
+            this.lastServiceDate(truck.getLastServiceDate());
+            this.modelYear(truck.getModelYear());
+            this.vinNum(truck.getVinNum());
+            this.engineCapacity(truck.getEngineCapacity());
+            this.mileage(truck.getMileage());
+            this.type(truck.getType());
+            this.loadCapacity(truck.getLoadCapacity());
             return this;
 
         }

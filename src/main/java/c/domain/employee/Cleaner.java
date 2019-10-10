@@ -1,8 +1,6 @@
 package c.domain.employee;
 
 import javax.persistence.Entity;
-import java.lang.reflect.Array;
-import java.util.Arrays;
 import java.util.Objects;
 
 @Entity
@@ -26,17 +24,41 @@ public class Cleaner extends Employee{
         return officeRoom;
     }
 
-    public void setOfficeRoom(int officeRoom) {
-        this.officeRoom = officeRoom;
-    }
 
     public static class CleanerBuilder extends Employee.Builder{
 
         private int officeRoom;
 
-        public CleanerBuilder OfficeRoom(int officeRoom){
+        public CleanerBuilder(){
+
+            super();
+
+        }
+
+        public CleanerBuilder officeRoom(int officeRoom){
 
             this.officeRoom = officeRoom;
+            return this;
+
+        }
+
+        @Override
+        public Employee build(){
+
+            return new Cleaner(this);
+
+        }
+
+        public CleanerBuilder copy(Cleaner cleaner){
+
+            this.empID(cleaner.getEmpID());
+            this.empName(cleaner.getEmpName());
+            this.empSurname(cleaner.getEmpSurname());
+            this.empJobTitle(cleaner.getEmpJobTitle());
+            this.empAddress(cleaner.getEmpAddress());
+            this.employmentDate(cleaner.getEmploymentDate());
+            this.empTel(cleaner.getEmpTel());
+            this.officeRoom(cleaner.getOfficeRoom());
             return this;
 
         }
@@ -61,14 +83,6 @@ public class Cleaner extends Employee{
         public int hashCode() {
             return Objects.hash(officeRoom);
         }
-
-        @Override
-        public Employee build(){
-
-            return new Cleaner(this);
-
-        }
-
     }
 
 

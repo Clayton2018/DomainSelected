@@ -13,7 +13,7 @@ public class Insurance {
     @Id
     @GeneratedValue(generator = "uuid2")
     @GenericGenerator(name = "uuid2", strategy = "uuid2")
-    private int insuranceId;
+    private String insuranceId;
     private String insurerName;
     private String insuranceCoverage;   //Example: accidental, 3rd party, full, minor.
 
@@ -30,7 +30,7 @@ public class Insurance {
 
     }//end constructor
 
-    public int getInsuranceId() {
+    public String getInsuranceId() {
         return insuranceId;
     }
 
@@ -44,12 +44,12 @@ public class Insurance {
 
     public static class Builder{
 
-        private int insuranceId;
+        private String insuranceId;
         private String insurerName;
         private String insuranceCoverage;
 
 
-        public Builder insuranceId(int insuranceId) {
+        public Builder insuranceId(String insuranceId) {
 
             this.insuranceId = insuranceId;
             return this;

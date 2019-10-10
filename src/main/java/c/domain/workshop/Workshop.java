@@ -12,10 +12,11 @@ public class Workshop extends Location{
 
     private String workshopName;
     private int noOfEmployees;
-    private int locationID;
-    private int equipmentID;
+    private String locationID;
+    private String equipmentID;
 
     public Workshop() {
+
     }
 
     public Workshop(WorkshopBuilder builder) {
@@ -36,11 +37,11 @@ public class Workshop extends Location{
         return noOfEmployees;
     }
 
-    public int getLocationID() {
+    public String getLocationID() {
         return locationID;
     }
 
-    public int getEquipmentID() {
+    public String getEquipmentID() {
         return equipmentID;
     }
 
@@ -48,8 +49,8 @@ public class Workshop extends Location{
 
         private String workshopName;
         private int noOfEmployees;
-        private int locationID;
-        private int equipmentID;
+        private String locationID;
+        private String equipmentID;
 
         public WorkshopBuilder(){
 
@@ -71,16 +72,26 @@ public class Workshop extends Location{
 
         }
 
-        public  WorkshopBuilder locationID(int locationID){
+        public  WorkshopBuilder locationID(String locationID){
 
             this.locationID = locationID;
             return this;
 
         }
 
-        public  WorkshopBuilder equipmentID(int equipmentID){
+        public  WorkshopBuilder equipmentID(String equipmentID){
 
             this.equipmentID = equipmentID;
+            return this;
+
+        }
+
+        public WorkshopBuilder copy(Workshop workshop){
+
+            this.workshopName(workshop.getWorkshopName());
+            this.noOfEmployees(workshop.getNoOfEmployees());
+            this.equipmentID(workshop.getEquipmentID());
+            this.locationID(workshop.getLocationID());
             return this;
 
         }
@@ -97,9 +108,9 @@ public class Workshop extends Location{
             if (!(o instanceof WorkshopBuilder)) return false;
             WorkshopBuilder that = (WorkshopBuilder) o;
             return noOfEmployees == that.noOfEmployees &&
-                    locationID == that.locationID &&
-                    equipmentID == that.equipmentID &&
-                    workshopName.equals(that.workshopName);
+                    Objects.equals(workshopName, that.workshopName) &&
+                    Objects.equals(locationID, that.locationID) &&
+                    Objects.equals(equipmentID, that.equipmentID);
         }
 
         @Override

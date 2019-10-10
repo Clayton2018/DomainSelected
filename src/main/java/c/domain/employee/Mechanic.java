@@ -26,7 +26,7 @@ public class Mechanic extends Employee {
     }
 
 
-    public String getDuties() {
+    public String getAllocatedBay() {
         return allocatedBay;
     }
 
@@ -40,9 +40,23 @@ public class Mechanic extends Employee {
 
         }
 
-        public MechanicBuilder duties(String duties){
+        public MechanicBuilder allocatedBay(String allocatedBay){
 
-            this.allocatedBay = duties;
+            this.allocatedBay = allocatedBay;
+            return this;
+
+        }
+
+        public MechanicBuilder copy(Mechanic mechanic){
+
+            this.empID(mechanic.getEmpID());
+            this.empName(mechanic.getEmpName());
+            this.empSurname(mechanic.getEmpSurname());
+            this.empJobTitle(mechanic.getEmpJobTitle());
+            this.empAddress(mechanic.getEmpAddress());
+            this.employmentDate(mechanic.getEmploymentDate());
+            this.empTel(mechanic.getEmpTel());
+            this.allocatedBay(mechanic.getAllocatedBay());
             return this;
 
         }

@@ -1,13 +1,16 @@
 package c.Factory.booking;
 
 import c.domain.booking.Booking;
+import c.util.IdGenerator;
+
+import java.util.Date;
 
 public class BookingFactory {
 
-    public static Booking getBooking(int bookingID, int customerID, int vehicleReg, String bookingDate){
+    public static Booking getBooking(String customerID, String vehicleReg, Date bookingDate){
 
         return new Booking.BookingBuilder()
-                .bookingId(bookingID)
+                .bookingId(IdGenerator.generateId())
                 .customerId(customerID)
                 .vehicleReg(vehicleReg)
                 .bookingDate(bookingDate)

@@ -24,11 +24,6 @@ public class Driver extends Employee {
         return licenseType;
     }
 
-    public void setLicenseType(String licenseType) {
-        this.licenseType = licenseType;
-    }
-
-
     public static class DriverBuilder extends Employee.Builder{
 
         private String licenseType;
@@ -42,6 +37,20 @@ public class Driver extends Employee {
         public DriverBuilder licenseType(String licenseType){
 
             this.licenseType = licenseType;
+            return this;
+
+        }
+
+        public DriverBuilder copy(Driver driver){
+
+            this.empID(driver.getEmpID());
+            this.empName(driver.getEmpName());
+            this.empSurname(driver.getEmpSurname());
+            this.empJobTitle(driver.getEmpJobTitle());
+            this.empAddress(driver.getEmpAddress());
+            this.employmentDate(driver.getEmploymentDate());
+            this.empTel(driver.getEmpTel());
+            this.licenseType(driver.getLicenseType());
             return this;
 
         }

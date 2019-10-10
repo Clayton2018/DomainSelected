@@ -1,15 +1,23 @@
 package c.Factory.employee;
 
 import c.domain.employee.Panelbeater;
+import c.util.IdGenerator;
+
+import java.util.Date;
 
 public class PanelbeaterFactory {
 
-    public static Panelbeater getPanelbeater(int id, String name, String surname){
+    public static Panelbeater getPanelbeater(String name, String lastName, String title, String address, String tel, Date empDate, double sal){
 
         return (Panelbeater) new Panelbeater.PanelbeaterBuilder()
-                .empID(id)
+                .empID(IdGenerator.generateId())
                 .empName(name)
-                .empSurname(surname)
+                .empSurname(lastName)
+                .empJobTitle(title)
+                .empAddress(address)
+                .empTel(tel)
+                .employmentDate(empDate)
+                .salary(sal)
                 .build();
 
     }

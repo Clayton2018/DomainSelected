@@ -15,6 +15,7 @@ public class Invoice {
     @Id
     @GeneratedValue(generator = "uuid2")
     @GenericGenerator(name = "uuid2", strategy = "uuid2")
+    private String invoiceID;
     private int invoiceNum;
     private String invoiceDate;
     private String description;
@@ -25,11 +26,16 @@ public class Invoice {
 
     public Invoice(InvoiceBuilder builder) {
 
+        this.invoiceID = builder.invoiceID;
         this.invoiceDate = builder.invoiceDate;
         this.invoiceNum = builder.invoiceNum;
         this.description = builder.description;
         this.amount = builder.amount;
 
+    }
+
+    public String getInvoiceID() {
+        return invoiceID;
     }
 
     public String getInvoiceDate() {
@@ -50,10 +56,18 @@ public class Invoice {
 
     public static class InvoiceBuilder{
 
+        private String invoiceID;
         private String invoiceDate;
         private int invoiceNum;
         private String description;
         private double amount;
+
+        public InvoiceBuilder invoiceID(String invoiceID){
+
+            this.invoiceID = invoiceID;
+            return this;
+
+        }
 
         public InvoiceBuilder invoiceDate(String invoiceDate){
 
@@ -92,6 +106,7 @@ public class Invoice {
         @Override
         public String toString() {
             return "InvoiceBuilder{" +
+                    "InvoiceID='" + invoiceID + '\'' +
                     "invoiceDate='" + invoiceDate + '\'' +
                     ", invoiceNum=" + invoiceNum +
                     ", description='" + description + '\'' +
@@ -114,6 +129,23 @@ public class Invoice {
         public int hashCode() {
             return Objects.hash(invoiceDate, invoiceNum, description, amount);
         }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Invoice)) return false;
+        Invoice invoice = (Invoice) o;
+        return getInvoiceNum() == invoice.getInvoiceNum() &&
+                Double.compare(invoice.getAmount(), getAmount()) == 0 &&
+                Objects.equals(getInvoiceID(), invoice.getInvoiceID()) &&
+                Objects.equals(getInvoiceDate(), invoice.getInvoiceDate()) &&
+                Objects.equals(getDescription(), invoice.getDescription());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getInvoiceID(), getInvoiceNum(), getInvoiceDate(), getDescription(), getAmount());
     }
 
 }

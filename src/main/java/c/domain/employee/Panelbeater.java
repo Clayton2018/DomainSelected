@@ -19,13 +19,37 @@ public class Panelbeater extends Employee {
 
     }
 
+    public String getType() {
+        return type;
+    }
+
     public static class PanelbeaterBuilder extends Employee.Builder{
 
         private String type;
 
+        public PanelbeaterBuilder(){
+
+            super();
+
+        }
+
         public PanelbeaterBuilder type(String type){
 
             this.type = type;
+            return this;
+
+        }
+
+        public PanelbeaterBuilder copy(Panelbeater panelbeater){
+
+            this.empID(panelbeater.getEmpID());
+            this.empName(panelbeater.getEmpName());
+            this.empSurname(panelbeater.getEmpSurname());
+            this.empJobTitle(panelbeater.getEmpJobTitle());
+            this.empAddress(panelbeater.getEmpAddress());
+            this.employmentDate(panelbeater.getEmploymentDate());
+            this.empTel(panelbeater.getEmpTel());
+            this.type(panelbeater.getType());
             return this;
 
         }

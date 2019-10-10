@@ -31,9 +31,29 @@ public class Suv extends Vehicle{
 
         private String bodyStyle;
 
+        public SuvBuilder(){
+
+            super();
+
+        }
+
         public SuvBuilder bodyStyle(String bodyStyle){
 
             this.bodyStyle = bodyStyle;
+            return this;
+
+        }
+
+        public SuvBuilder copy(Suv suv){
+
+            this.manufacturer(suv.getManufacturer());
+            this.regNum(suv.getRegNum());
+            this.lastServiceDate(suv.getLastServiceDate());
+            this.modelYear(suv.getModelYear());
+            this.vinNum(suv.getVinNum());
+            this.engineCapacity(suv.getEngineCapacity());
+            this.mileage(suv.getMileage());
+            this.bodyStyle(suv.getBodyStyle());
             return this;
 
         }

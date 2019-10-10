@@ -1,20 +1,24 @@
 package c.Factory.employee;
 
 import c.domain.employee.Technician;
+import c.util.IdGenerator;
+
+import java.util.Date;
 
 public class TechnicianFactory {
 
-    public static Technician getTechnician(int id, String name, String lastName, String title, String address, String tel, String empDate, String type, double rate){
+    public static Technician getTechnician(String specialization, String name, String lastName, String title, String address, String tel, Date empDate, String type, double sal){
 
         return (Technician) new Technician.TechnicianBuilder()
-                .empID(id)
+                .specialization(specialization)
+                .empID(IdGenerator.generateId())
                 .empName(name)
                 .empSurname(lastName)
                 .empJobTitle(title)
                 .empAddress(address)
                 .empTel(tel)
                 .employmentDate(empDate)
-                .empPay(rate)
+                .salary(sal)
                 .build();
 
     }

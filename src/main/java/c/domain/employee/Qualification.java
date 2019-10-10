@@ -86,6 +86,16 @@ public class Qualification {
 
         }
 
+        public Builder copy(Qualification qualification){
+
+            this.qualificationID(qualification.getQualificationID());
+            this.qualificationName(qualification.getQualificationName());
+            this.qualificationDuration(qualification.getQualificationDuration());
+            this.instituteName(qualification.getInstituteName());
+            return this;
+
+        }
+
         public Qualification build(){
 
             return new Qualification(this);

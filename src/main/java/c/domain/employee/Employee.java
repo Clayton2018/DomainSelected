@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
+import java.util.Date;
 
 @MappedSuperclass
 public abstract class Employee {
@@ -15,15 +16,14 @@ public abstract class Employee {
     @Id
     @GeneratedValue(generator = "uuid2")
     @GenericGenerator(name = "uuid2", strategy = "uuid2")
-    private int empID;
+    private String empID;
     private String empJobTitle;
     private String empName;
     private String empSurname;
     private String empTel;
     private String empAddress;
-    private String employmentDate;
+    private Date employmentDate;
     private double salary;
-
 
     public Employee(){}
 
@@ -41,7 +41,7 @@ public abstract class Employee {
 
     }
 
-    public int getEmpID() {
+    public String getEmpID() {
         return empID;
     }
 
@@ -65,7 +65,7 @@ public abstract class Employee {
         return empAddress;
     }
 
-    public String getEmploymentDate() {
+    public Date getEmploymentDate() {
         return employmentDate;
     }
 
@@ -75,17 +75,17 @@ public abstract class Employee {
 
     public static abstract class Builder{
 
-        private int empID;
+        private String empID;
         private String empJobTitle;
         private String empName;
         private String empSurname;
         private String empTel;
         private String empAddress;
-        private String employmentDate;
+        private Date employmentDate;
         private double salary;
 
 
-        public Builder empID(int empID){
+        public Builder empID(String empID){
 
             this.empID = empID;
             return this;
@@ -127,7 +127,7 @@ public abstract class Employee {
 
         }
 
-        public Builder employmentDate(String employmentDate){
+        public Builder employmentDate(Date employmentDate){
 
             this.employmentDate = employmentDate;
             return this;

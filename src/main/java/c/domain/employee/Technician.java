@@ -25,10 +25,6 @@ public class Technician extends Employee{
     return specialization;
   }
 
-  public void setSpecialization(String specialization) {
-    this.specialization = specialization;
-  }
-
   public static class TechnicianBuilder extends Employee.Builder{
 
     private String specialization;
@@ -42,6 +38,20 @@ public class Technician extends Employee{
     public TechnicianBuilder specialization(String specialization){
 
       this.specialization = specialization;
+      return this;
+
+    }
+
+    public TechnicianBuilder copy(Technician technician){
+
+      this.empID(technician.getEmpID());
+      this.empName(technician.getEmpName());
+      this.empSurname(technician.getEmpSurname());
+      this.empJobTitle(technician.getEmpJobTitle());
+      this.empAddress(technician.getEmpAddress());
+      this.employmentDate(technician.getEmploymentDate());
+      this.empTel(technician.getEmpTel());
+      this.specialization(technician.getSpecialization());
       return this;
 
     }

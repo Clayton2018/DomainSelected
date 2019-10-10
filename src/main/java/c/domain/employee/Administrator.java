@@ -19,6 +19,10 @@ public class Administrator extends Employee {
 
     }
 
+    public String getAdminType() {
+        return adminType;
+    }
+
     public static class AdminBuilder extends Employee.Builder{
 
         private String adminType;
@@ -32,6 +36,20 @@ public class Administrator extends Employee {
         public AdminBuilder type(String adminType){
 
             this.adminType = adminType;
+            return this;
+
+        }
+
+        public AdminBuilder copy(Administrator admin){
+
+            this.empID(admin.getEmpID());
+            this.empName(admin.getEmpName());
+            this.empSurname(admin.getEmpSurname());
+            this.empJobTitle(admin.getEmpJobTitle());
+            this.empAddress(admin.getEmpAddress());
+            this.employmentDate(admin.getEmploymentDate());
+            this.empTel(admin.getEmpTel());
+            this.type(admin.adminType);
             return this;
 
         }

@@ -1,6 +1,7 @@
 package c.domain.vehicleservice;
 
 import c.domain.customer.Customer;
+import c.domain.employee.VehicleInspector;
 import c.domain.vehicle.Vehicle;
 import org.hibernate.annotations.GenericGenerator;
 
@@ -8,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 
@@ -18,8 +20,9 @@ public class VehicleService {
     @Id
     @GeneratedValue(generator = "uuid2")
     @GenericGenerator(name = "uuid2", strategy = "uuid2")
-    private int serviceID;
-    private String serviceDate, serviceDescription;
+    private String serviceID;
+    private String serviceDescription;
+    private Date serviceDate;
 
 
     public VehicleService(){
@@ -34,44 +37,33 @@ public class VehicleService {
 
     }
 
-    public int getServiceID() {
+    public String getServiceID() {
         return serviceID;
     }
 
-    public void setServiceID(int serviceID) {
-        this.serviceID = serviceID;
-    }
-
-    public String getServiceDate() {
+    public Date getServiceDate() {
         return serviceDate;
-    }
-
-    public void setServiceDate(String serviceDate) {
-        this.serviceDate = serviceDate;
     }
 
     public String getServiceDescription() {
         return serviceDescription;
     }
 
-    public void setServiceDescription(String serviceDescription) {
-        this.serviceDescription = serviceDescription;
-    }
-
     public static class VehicleServiceBuilder {
 
-        private int serviceID;
-        private String serviceDate, serviceDescription;
+        private String serviceID;
+        private String serviceDescription;
+        private Date serviceDate;
 
 
-        public VehicleServiceBuilder serviceID(int serviceID){
+        public VehicleServiceBuilder serviceID(String serviceID){
 
             this.serviceID = serviceID;
             return this;
 
         }
 
-        public VehicleServiceBuilder serviceDate(String serviceDate){
+        public VehicleServiceBuilder serviceDate(Date serviceDate){
 
             this.serviceDate = serviceDate;
             return this;
@@ -81,6 +73,15 @@ public class VehicleService {
         public VehicleServiceBuilder serviceDescription(String serviceDescription) {
 
             this.serviceDescription = serviceDescription;
+            return this;
+
+        }
+
+        public VehicleServiceBuilder copy(VehicleService vehicleService){
+
+            this.serviceID(vehicleService.serviceID);
+            this.serviceDescription(vehicleService.serviceDescription);
+            this.serviceDate(vehicleService.serviceDate);
             return this;
 
         }
@@ -104,14 +105,14 @@ public class VehicleService {
             if (this == o) return true;
             if (!(o instanceof VehicleServiceBuilder)) return false;
             VehicleServiceBuilder that = (VehicleServiceBuilder) o;
-            return serviceID == that.serviceID &&
-                    Objects.equals(serviceDate, that.serviceDate) &&
-                    Objects.equals(serviceDescription, that.serviceDescription);
+            return Objects.equals(serviceID, that.serviceID) &&
+                    Objects.equals(serviceDescription, that.serviceDescription) &&
+                    Objects.equals(serviceDate, that.serviceDate);
         }
 
         @Override
         public int hashCode() {
-            return Objects.hash(serviceID, serviceDate, serviceDescription);
+            return Objects.hash(serviceID, serviceDescription, serviceDate);
         }
     }
 

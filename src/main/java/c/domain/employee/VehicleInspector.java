@@ -47,6 +47,20 @@ public class VehicleInspector extends Employee{
 
         }
 
+        public VehicleInspectorBuilder copy(VehicleInspector vehicleInspector){
+
+            this.empID(vehicleInspector.getEmpID());
+            this.empName(vehicleInspector.getEmpName());
+            this.empSurname(vehicleInspector.getEmpSurname());
+            this.empJobTitle(vehicleInspector.getEmpJobTitle());
+            this.empAddress(vehicleInspector.getEmpAddress());
+            this.employmentDate(vehicleInspector.getEmploymentDate());
+            this.empTel(vehicleInspector.getEmpTel());
+            this.specialization(vehicleInspector.getSpecialization());
+            return this;
+
+        }
+
         @Override
         public Employee build(){
 
