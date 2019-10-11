@@ -3,6 +3,7 @@ package c.domain.booking;
 import c.domain.customer.Customer;
 import org.hibernate.annotations.GenericGenerator;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -15,11 +16,12 @@ public class Booking {
     @Id
     @GeneratedValue(generator = "uuid2")
     @GenericGenerator(name = "uuid2", strategy = "uuid2")
+    @Column(name = "booking_id" , nullable = false, columnDefinition = "VARCHAR(25)")
     private String bookingId;
     private String customerId;
     private String vehicleReg;
     private Date bookingDate;
-    private String desc;
+    private String desccription;
 
     public Booking() {
 
@@ -31,7 +33,7 @@ public class Booking {
         this.customerId = builder.customerId;
         this.vehicleReg = builder.vehicleReg;
         this.bookingDate = builder.bookingDate;
-        this.desc = builder.desc;
+        this.desccription = builder.desccription;
 
 
     }
@@ -52,15 +54,15 @@ public class Booking {
         return bookingDate;
     }
 
-    public String getDesc() {
-        return desc;
+    public String getDescription() {
+        return desccription;
     }
 
     public static class BookingBuilder{
 
         private String bookingId, customerId, vehicleReg;
         private Date bookingDate;
-        private String desc;
+        private String desccription;
 
         public BookingBuilder() {
 
@@ -94,9 +96,9 @@ public class Booking {
 
         }
 
-        public BookingBuilder desc(String desc){
+        public BookingBuilder desccription(String desccription){
 
-            this.desc = desc;
+            this.desccription = desccription;
             return this;
 
         }
@@ -107,7 +109,7 @@ public class Booking {
             this.customerId = booking.customerId;
             this.vehicleReg = booking.vehicleReg;
             this.bookingDate = booking.bookingDate;
-            this.desc = booking.desc;
+            this.desccription = booking.desccription;
             return this;
 
         }
@@ -123,16 +125,16 @@ public class Booking {
             if (this == o) return true;
             if (!(o instanceof BookingBuilder)) return false;
             BookingBuilder that = (BookingBuilder) o;
-            return bookingId == that.bookingId &&
-                    customerId == that.customerId &&
-                    vehicleReg == that.vehicleReg &&
+            return bookingId.equals(that.bookingId) &&
+                    Objects.equals(customerId, that.customerId) &&
+                    Objects.equals(vehicleReg, that.vehicleReg) &&
                     Objects.equals(bookingDate, that.bookingDate) &&
-                    Objects.equals(desc, that.desc);
+                    Objects.equals(desccription, that.desccription);
         }
 
         @Override
         public int hashCode() {
-            return Objects.hash(bookingId, customerId, vehicleReg, bookingDate, desc);
+            return Objects.hash(bookingId, customerId, vehicleReg, bookingDate, desccription);
         }
 
         @Override
@@ -142,7 +144,7 @@ public class Booking {
                     ", customerId=" + customerId +
                     ", vehicleReg=" + vehicleReg +
                     ", bookingDate=" + bookingDate +
-                    ", desc='" + desc + '\'' +
+                    ", desc='" + desccription + '\'' +
                     '}';
         }
 

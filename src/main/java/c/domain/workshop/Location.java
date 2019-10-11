@@ -3,6 +3,7 @@ package c.domain.workshop;
 
 import org.hibernate.annotations.GenericGenerator;
 
+import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
@@ -13,6 +14,7 @@ public abstract class Location {
     @Id
     @GeneratedValue(generator = "uuid2")
     @GenericGenerator(name = "uuid2", strategy = "uuid2")
+    @Column(name = "area_id" , nullable = false, columnDefinition = "VARCHAR(25)")
     private String areaID;
     private String areaName;
 

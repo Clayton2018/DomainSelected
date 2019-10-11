@@ -2,6 +2,7 @@ package c.domain.customer;
 
 import org.hibernate.annotations.GenericGenerator;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -15,6 +16,7 @@ public class Invoice {
     @Id
     @GeneratedValue(generator = "uuid2")
     @GenericGenerator(name = "uuid2", strategy = "uuid2")
+    @Column(name = "invoice_id" , nullable = false, columnDefinition = "VARCHAR(25)")
     private String invoiceID;
     private int invoiceNum;
     private String invoiceDate;

@@ -4,6 +4,7 @@ package c.domain.employee;
 
 import org.hibernate.annotations.GenericGenerator;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -16,6 +17,7 @@ public class Qualification {
     @Id
     @GeneratedValue(generator = "uuid2")
     @GenericGenerator(name = "uuid2", strategy = "uuid2")
+    @Column(name = "qualification_id" , nullable = false, columnDefinition = "VARCHAR(25)")
     private String qualificationID;
     private String qualificationName;
     private String instituteName;
