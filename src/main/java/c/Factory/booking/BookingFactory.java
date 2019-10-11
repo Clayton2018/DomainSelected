@@ -7,10 +7,10 @@ import java.util.Date;
 
 public class BookingFactory {
 
-    public static Booking getBooking(String customerID, String vehicleReg, String bookingDate, String desc){
+    public static Booking getBooking(String id, String customerID, String vehicleReg, String bookingDate, String desc){
 
         return new Booking.BookingBuilder()
-                .bookingId(IdGenerator.generateId())
+                .bookingId(id)
                 .customerId(customerID)
                 .vehicleReg(vehicleReg)
                 .bookingDate(bookingDate)

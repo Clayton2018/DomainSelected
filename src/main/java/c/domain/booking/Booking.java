@@ -14,8 +14,8 @@ import java.util.Objects;
 public class Booking {
 
     @Id
-    @GeneratedValue(generator = "uuid2")
-    @GenericGenerator(name = "uuid2", strategy = "uuid2")
+    //@GeneratedValue(generator = "uuid2")
+    //@GenericGenerator(name = "uuid2", strategy = "uuid2")
     @Column(name = "booking_id" , nullable = false, columnDefinition = "VARCHAR(25)")
     private String bookingId;
     private String customerId;
