@@ -20,7 +20,7 @@ public class Booking {
     private String bookingId;
     private String customerId;
     private String vehicleReg;
-    private Date bookingDate;
+    private String bookingDate;
     private String desccription;
 
     public Booking() {
@@ -50,7 +50,7 @@ public class Booking {
         return vehicleReg;
     }
 
-    public Date getBookingDate() {
+    public String getBookingDate() {
         return bookingDate;
     }
 
@@ -61,7 +61,7 @@ public class Booking {
     public static class BookingBuilder{
 
         private String bookingId, customerId, vehicleReg;
-        private Date bookingDate;
+        private String bookingDate;
         private String desccription;
 
         public BookingBuilder() {
@@ -89,7 +89,7 @@ public class Booking {
 
         }
 
-        public BookingBuilder bookingDate(Date bookingDate){
+        public BookingBuilder bookingDate(String bookingDate){
 
             this.bookingDate = bookingDate;
             return this;

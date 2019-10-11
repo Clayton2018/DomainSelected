@@ -7,7 +7,7 @@ import java.util.Date;
 
 public class BookingFactory {
 
-    public static Booking getBooking(String customerID, String vehicleReg, Date bookingDate, String desc){
+    public static Booking getBooking(String customerID, String vehicleReg, String bookingDate, String desc){
 
         return new Booking.BookingBuilder()
                 .bookingId(IdGenerator.generateId())
