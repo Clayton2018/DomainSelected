@@ -14,7 +14,6 @@ public abstract class Location {
     @Id
     @GeneratedValue(generator = "uuid2")
     @GenericGenerator(name = "uuid2", strategy = "uuid2")
-    @Column(name = "area_id" , nullable = false, columnDefinition = "VARCHAR(25)")
     private String areaID;
     private String areaName;
 

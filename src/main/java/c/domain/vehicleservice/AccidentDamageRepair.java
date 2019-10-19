@@ -14,7 +14,6 @@ public class AccidentDamageRepair {
     @Id
     @GeneratedValue(generator = "uuid2")
     @GenericGenerator(name = "uuid2", strategy = "uuid2")
-    @Column(name = "accident_id" , nullable = false, columnDefinition = "VARCHAR(25)")
     private String accidentID;
     private String accidentCode;  // of the extent of the damage.
     private String accidentDescription;

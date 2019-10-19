@@ -16,7 +16,6 @@ public class Invoice {
     @Id
     @GeneratedValue(generator = "uuid2")
     @GenericGenerator(name = "uuid2", strategy = "uuid2")
-    @Column(name = "invoice_id" , nullable = false, columnDefinition = "VARCHAR(25)")
     private String invoiceID;
     private int invoiceNum;
     private String invoiceDate;
