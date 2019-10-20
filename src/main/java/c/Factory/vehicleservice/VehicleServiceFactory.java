@@ -7,7 +7,7 @@ import java.util.Date;
 
 public class VehicleServiceFactory {
 
-    public static VehicleService getVehicleService(Date sDate, String sDesc){
+    public static VehicleService getVehicleService(String sDate, String sDesc){
 
         return new VehicleService.VehicleServiceBuilder()
                 .serviceID(IdGenerator.generateId())

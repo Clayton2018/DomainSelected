@@ -7,7 +7,7 @@ import java.util.Date;
 
 public class AdministratorFactory {
 
-    public static Administrator getAdministrator(String name, String lastName, String title, String address, String tel, Date empDate, double sal, String type){
+    public static Administrator getAdministrator(String name, String lastName, String title, String address, String tel, String empDate, double sal, String type){
 
         return (Administrator) new Administrator.AdminBuilder()
                 .type(type)

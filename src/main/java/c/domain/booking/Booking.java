@@ -16,12 +16,11 @@ public class Booking {
     @Id
     @GeneratedValue(generator = "uuid2")
     @GenericGenerator(name = "uuid2", strategy = "uuid2")
-    //@Column(name = "booking_id" , nullable = false, columnDefinition = "VARCHAR(25)")
     private String bookingId;
     private String customerId;
     private String vehicleReg;
     private String bookingDate;
-    private String desccription;
+    private String description;
 
     public Booking() {
 
@@ -33,7 +32,7 @@ public class Booking {
         this.customerId = builder.customerId;
         this.vehicleReg = builder.vehicleReg;
         this.bookingDate = builder.bookingDate;
-        this.desccription = builder.desccription;
+        this.description = builder.description;
 
 
     }
@@ -55,14 +54,14 @@ public class Booking {
     }
 
     public String getDescription() {
-        return desccription;
+        return description;
     }
 
     public static class BookingBuilder{
 
         private String bookingId, customerId, vehicleReg;
         private String bookingDate;
-        private String desccription;
+        private String description;
 
         public BookingBuilder() {
 
@@ -96,9 +95,9 @@ public class Booking {
 
         }
 
-        public BookingBuilder desccription(String desccription){
+        public BookingBuilder description(String description){
 
-            this.desccription = desccription;
+            this.description = description;
             return this;
 
         }
@@ -109,7 +108,7 @@ public class Booking {
             this.customerId = booking.customerId;
             this.vehicleReg = booking.vehicleReg;
             this.bookingDate = booking.bookingDate;
-            this.desccription = booking.desccription;
+            this.description = booking.description;
             return this;
 
         }
@@ -129,12 +128,12 @@ public class Booking {
                     Objects.equals(customerId, that.customerId) &&
                     Objects.equals(vehicleReg, that.vehicleReg) &&
                     Objects.equals(bookingDate, that.bookingDate) &&
-                    Objects.equals(desccription, that.desccription);
+                    Objects.equals(description, that.description);
         }
 
         @Override
         public int hashCode() {
-            return Objects.hash(bookingId, customerId, vehicleReg, bookingDate, desccription);
+            return Objects.hash(bookingId, customerId, vehicleReg, bookingDate, description);
         }
 
         @Override
@@ -144,7 +143,7 @@ public class Booking {
                     ", customerId=" + customerId +
                     ", vehicleReg=" + vehicleReg +
                     ", bookingDate=" + bookingDate +
-                    ", desc='" + desccription + '\'' +
+                    ", desc='" + description + '\'' +
                     '}';
         }
 

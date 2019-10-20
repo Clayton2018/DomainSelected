@@ -18,6 +18,7 @@ public class Customer {
     private String customerSurname;
     private String customerAddress;
     private String customerPhoneNum;
+    private String vehicleRegistration;
     private boolean hasInsurance = false;
 
     public Customer() {
@@ -31,6 +32,7 @@ public class Customer {
         this.customerSurname = builder.customerSurname;
         this.customerAddress = builder.customerAddress;
         this.customerPhoneNum = builder.customerPhoneNum;
+        this.vehicleRegistration = builder.vehicleRegistration;
         this.hasInsurance = builder.hasInsurance;
 
     }
@@ -55,6 +57,10 @@ public class Customer {
         return customerPhoneNum;
     }
 
+    public String getVehicleRegistration() {
+        return vehicleRegistration;
+    }
+
     public boolean isHasInsurance() {
         return hasInsurance;
     }
@@ -70,6 +76,7 @@ public class Customer {
         private String customerSurname;
         private String customerAddress;
         private String customerPhoneNum;
+        private String vehicleRegistration;
         private boolean hasInsurance;
 
         public Builder customerID(String customerID) {
@@ -107,6 +114,13 @@ public class Customer {
 
         }
 
+        public Builder vehicleRegistration(String vehicleReg) {
+
+            this.vehicleRegistration = vehicleReg;
+            return this;
+
+        }
+
         public Builder hasInsurance(boolean hasInsurance){
 
             this.hasInsurance = hasInsurance;
@@ -127,6 +141,7 @@ public class Customer {
             this.customerSurname = customer.customerSurname;
             this.customerAddress = customer.customerAddress;
             this.customerPhoneNum = customer.customerPhoneNum;
+            this.vehicleRegistration = customer.vehicleRegistration;
             this.hasInsurance = customer.hasInsurance;
             return this;
 
@@ -140,7 +155,8 @@ public class Customer {
                     + "\n" + "Name: " + customerName + "\nSurname: "
                     + customerSurname + "\nAddress: " + customerAddress
                     + "\nTel number: " + customerPhoneNum
-                    + "Insurance: " + hasInsurance;
+                    + "\nVehicle reg: " + vehicleRegistration
+                    + "\nInsurance: " + hasInsurance;
 
         }
 

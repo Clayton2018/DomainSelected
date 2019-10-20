@@ -15,10 +15,10 @@ public class Equipment {
     @Id
     @GeneratedValue(generator = "uuid2")
     @GenericGenerator(name = "uuid2", strategy = "uuid2")
-    @Column(name = "equipment_id" , nullable = false, columnDefinition = "VARCHAR(25)")
     private String equipID;
     private String equipName;
     private String workshopName;
+    private String warranty;
 
     public Equipment(){}
 
@@ -27,6 +27,7 @@ public class Equipment {
         this.equipName = builder.equipName;
         this.equipID = builder.equipID;
         this.workshopName = builder.workshopName;
+        this.warranty = builder.warranty;
 
     }
 
@@ -42,12 +43,16 @@ public class Equipment {
         return workshopName;
     }
 
+    public String getWarranty() {
+        return warranty;
+    }
 
-       public static class EquipmentBuilder{
+    public static class EquipmentBuilder{
 
         private String equipID;
         private String equipName;
         private String workshopName;
+        private String warranty;
 
         public EquipmentBuilder(){
 
@@ -74,11 +79,19 @@ public class Equipment {
 
         }
 
+        public EquipmentBuilder warranty(String warranty){
+
+            this.warranty = warranty;
+            return this;
+
+        }
+
         public EquipmentBuilder copy(Equipment equipment){
 
             this.equipID(equipment.getEquipID());
             this.equipName(equipment.getEquipName());
             this.workshopName(equipment.getWorkshopName());
+            this.warranty(equipment.getWarranty());
             return this;
 
         }
@@ -94,24 +107,26 @@ public class Equipment {
 
             return "Equipment\n" + "ID: " + equipID
                     + ", " + "Name: " + equipName +
-                    ", " + "Workshop name" + workshopName + "\n";
+                    ", " + "Workshop name: " + workshopName +
+                    ", " + "Warranty: " + warranty + "\n";
 
         }
 
-           @Override
-           public boolean equals(Object o) {
-               if (this == o) return true;
-               if (!(o instanceof EquipmentBuilder)) return false;
-               EquipmentBuilder that = (EquipmentBuilder) o;
-               return equipID.equals(that.equipID) &&
-                       Objects.equals(equipName, that.equipName) &&
-                       Objects.equals(workshopName, that.workshopName);
-           }
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (!(o instanceof EquipmentBuilder)) return false;
+            EquipmentBuilder that = (EquipmentBuilder) o;
+            return Objects.equals(equipID, that.equipID) &&
+                    Objects.equals(equipName, that.equipName) &&
+                    Objects.equals(workshopName, that.workshopName) &&
+                    Objects.equals(warranty, that.warranty);
+        }
 
-           @Override
-           public int hashCode() {
-               return Objects.hash(equipID, equipName, workshopName);
-           }
-       }
+        @Override
+        public int hashCode() {
+            return Objects.hash(equipID, equipName, workshopName, warranty);
+        }
+    }
 
 }

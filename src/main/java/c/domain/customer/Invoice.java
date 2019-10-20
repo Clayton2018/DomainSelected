@@ -19,6 +19,8 @@ public class Invoice {
     private String invoiceID;
     private int invoiceNum;
     private String invoiceDate;
+    private String customerName;
+    private String vehicleReg;
     private String description;
     private double amount;
 
@@ -31,6 +33,8 @@ public class Invoice {
         this.invoiceDate = builder.invoiceDate;
         this.invoiceNum = builder.invoiceNum;
         this.description = builder.description;
+        this.customerName = builder.customerName;
+        this.vehicleReg = builder.vehicleReg;
         this.amount = builder.amount;
 
     }
@@ -55,50 +59,87 @@ public class Invoice {
         return amount;
     }
 
-    public static class InvoiceBuilder{
+    public String getCustomerName() {
+        return customerName;
+    }
+
+    public String getVehicleReg() {
+        return vehicleReg;
+    }
+
+    public static class InvoiceBuilder {
 
         private String invoiceID;
         private String invoiceDate;
         private int invoiceNum;
         private String description;
+        private String customerName;
+        private String vehicleReg;
         private double amount;
 
-        public InvoiceBuilder invoiceID(String invoiceID){
+        public InvoiceBuilder invoiceID(String invoiceID) {
 
             this.invoiceID = invoiceID;
             return this;
 
         }
 
-        public InvoiceBuilder invoiceDate(String invoiceDate){
+        public InvoiceBuilder invoiceDate(String invoiceDate) {
 
             this.invoiceDate = invoiceDate;
             return this;
 
         }
 
-        public InvoiceBuilder invoiceNum(int invoiceNum){
+        public InvoiceBuilder invoiceNum(int invoiceNum) {
 
             this.invoiceNum = invoiceNum;
             return this;
 
         }
 
-        public InvoiceBuilder description(String description){
+        public InvoiceBuilder description(String description) {
 
             this.description = description;
             return this;
 
         }
 
-        public InvoiceBuilder amount(double amount){
+        public InvoiceBuilder customerName(String custName) {
+
+            this.customerName = custName;
+            return this;
+
+        }
+
+        public InvoiceBuilder vehicleReg(String vehicleReg) {
+
+            this.vehicleReg = vehicleReg;
+            return this;
+
+        }
+
+        public InvoiceBuilder amount(double amount) {
 
             this.amount = amount;
             return this;
 
         }
 
-        public Invoice build(){
+        public InvoiceBuilder copy(Invoice invoice){
+
+            this.invoiceID = invoice.invoiceID;
+            this.invoiceDate = invoice.invoiceDate;
+            this.invoiceNum = invoice.invoiceNum;
+            this.description = invoice.description;
+            this.customerName = invoice.customerName;
+            this.vehicleReg = invoice.vehicleReg;
+            this.amount = invoice.amount;
+            return this;
+
+        }
+
+        public Invoice build() {
 
             return new Invoice(this);
 
@@ -111,6 +152,8 @@ public class Invoice {
                     "invoiceDate='" + invoiceDate + '\'' +
                     ", invoiceNum=" + invoiceNum +
                     ", description='" + description + '\'' +
+                    ", customer name='" + customerName + '\'' +
+                    ", vehicle reg='" + vehicleReg + '\'' +
                     ", amount=" + amount +
                     '}';
         }
@@ -122,31 +165,17 @@ public class Invoice {
             InvoiceBuilder that = (InvoiceBuilder) o;
             return invoiceNum == that.invoiceNum &&
                     Double.compare(that.amount, amount) == 0 &&
-                    invoiceDate.equals(that.invoiceDate) &&
-                    description.equals(that.description);
+                    invoiceID.equals(that.invoiceID) &&
+                    Objects.equals(invoiceDate, that.invoiceDate) &&
+                    Objects.equals(description, that.description) &&
+                    Objects.equals(customerName, that.customerName) &&
+                    Objects.equals(vehicleReg, that.vehicleReg);
         }
 
         @Override
         public int hashCode() {
-            return Objects.hash(invoiceDate, invoiceNum, description, amount);
+            return Objects.hash(invoiceID, invoiceDate, invoiceNum, description, customerName, vehicleReg, amount);
         }
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Invoice)) return false;
-        Invoice invoice = (Invoice) o;
-        return getInvoiceNum() == invoice.getInvoiceNum() &&
-                Double.compare(invoice.getAmount(), getAmount()) == 0 &&
-                Objects.equals(getInvoiceID(), invoice.getInvoiceID()) &&
-                Objects.equals(getInvoiceDate(), invoice.getInvoiceDate()) &&
-                Objects.equals(getDescription(), invoice.getDescription());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(getInvoiceID(), getInvoiceNum(), getInvoiceDate(), getDescription(), getAmount());
     }
 
 }

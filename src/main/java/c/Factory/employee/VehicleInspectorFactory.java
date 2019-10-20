@@ -9,7 +9,7 @@ import java.util.List;
 
 public class VehicleInspectorFactory {
 
-    public static VehicleInspector getVehicleInspector(String specialization, int id, String name, String lastName, String title, String address, String tel, Date empDate, double pay){
+    public static VehicleInspector getVehicleInspector(String specialization, int id, String name, String lastName, String title, String address, String tel, String empDate, double pay){
 
         return (VehicleInspector) new VehicleInspector.VehicleInspectorBuilder()
                 .specialization(specialization)

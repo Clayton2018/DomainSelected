@@ -14,7 +14,7 @@ public class BookingFactory {
                 .customerId(customerID)
                 .vehicleReg(vehicleReg)
                 .bookingDate(bookingDate)
-                .desccription(desc)
+                .description(desc)
                 .build();
 
     }

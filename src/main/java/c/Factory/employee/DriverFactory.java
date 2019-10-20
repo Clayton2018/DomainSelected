@@ -7,7 +7,7 @@ import java.util.Date;
 
 public class DriverFactory {
 
-    public static Driver getDriver(String name, String lastName, String title, String address, String tel, Date empDate, String license){
+    public static Driver getDriver(String name, String lastName, String title, String address, String tel, String empDate, String license){
 
         return (Driver) new Driver.DriverBuilder()
                 .licenseType(license)

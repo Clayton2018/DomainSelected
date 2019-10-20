@@ -7,7 +7,6 @@ import java.util.Objects;
 public class Truck extends Vehicle {
 
     private String type;
-
     private String loadCapacity;
 
     public Truck(){

@@ -7,7 +7,7 @@ import java.util.Date;
 
 public class TechnicianFactory {
 
-    public static Technician getTechnician(String specialization, String name, String lastName, String title, String address, String tel, Date empDate, String type, double sal){
+    public static Technician getTechnician(String specialization, String name, String lastName, String title, String address, String tel, String empDate, String type, double sal){
 
         return (Technician) new Technician.TechnicianBuilder()
                 .specialization(specialization)

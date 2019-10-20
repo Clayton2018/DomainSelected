@@ -19,7 +19,7 @@ public abstract class Employee {
     private String empSurname;
     private String empTel;
     private String empAddress;
-    private Date employmentDate;
+    private String employmentDate;
     private double salary;
 
     public Employee(){}
@@ -62,7 +62,7 @@ public abstract class Employee {
         return empAddress;
     }
 
-    public Date getEmploymentDate() {
+    public String getEmploymentDate() {
         return employmentDate;
     }
 
@@ -78,7 +78,7 @@ public abstract class Employee {
         private String empSurname;
         private String empTel;
         private String empAddress;
-        private Date employmentDate;
+        private String employmentDate;
         private double salary;
 
 
@@ -124,7 +124,7 @@ public abstract class Employee {
 
         }
 
-        public Builder employmentDate(Date employmentDate){
+        public Builder employmentDate(String employmentDate){
 
             this.employmentDate = employmentDate;
             return this;

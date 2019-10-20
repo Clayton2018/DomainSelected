@@ -7,9 +7,10 @@ import java.util.Date;
 
 public class MechanicFactory {
 
-    public static Mechanic getMechanic(String name, String lastName, String title, String address, String tel, Date empDate, double sal){
+    public static Mechanic getMechanic(String allocatedBay, String name, String lastName, String title, String address, String tel, String empDate, double sal){
 
         return (Mechanic) new Mechanic.MechanicBuilder()
+                .allocatedBay(allocatedBay)
                 .empID(IdGenerator.generateId())
                 .empName(name)
                 .empSurname(lastName)

@@ -5,12 +5,13 @@ import c.util.IdGenerator;
 
 public class EquipmentFactory {
 
-    public static Equipment getEquipment(String eName, String workshopName){
+    public static Equipment getEquipment(String eName, String workshopName, String warranty){
 
         return new Equipment.EquipmentBuilder()
                 .equipID(IdGenerator.generateId())
                 .equipName(eName)
                 .workshopName(workshopName)
+                .warranty(warranty)
                 .build();
 
     }

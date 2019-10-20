@@ -7,7 +7,7 @@ import java.util.Date;
 
 public class CleanerFactory {
 
-    public static Cleaner getCleaner(String name, String lastName, String title, String address, String tel, Date empDate){
+    public static Cleaner getCleaner(String name, String lastName, String title, String address, String tel, String empDate){
 
         return (Cleaner) new Cleaner.CleanerBuilder()
                 .empID(IdGenerator.generateId())

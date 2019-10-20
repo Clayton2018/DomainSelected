@@ -7,7 +7,7 @@ import java.util.Date;
 
 public class PanelbeaterFactory {
 
-    public static Panelbeater getPanelbeater(String name, String lastName, String title, String address, String tel, Date empDate, double sal){
+    public static Panelbeater getPanelbeater(String name, String lastName, String title, String address, String tel, String empDate, double sal){
 
         return (Panelbeater) new Panelbeater.PanelbeaterBuilder()
                 .empID(IdGenerator.generateId())

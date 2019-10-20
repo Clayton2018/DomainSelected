@@ -23,7 +23,7 @@ public class VehicleService {
     @GenericGenerator(name = "uuid2", strategy = "uuid2")
     private String serviceID;
     private String serviceDescription;
-    private Date serviceDate;
+    private String serviceDate;
 
 
     public VehicleService(){
@@ -42,7 +42,7 @@ public class VehicleService {
         return serviceID;
     }
 
-    public Date getServiceDate() {
+    public String getServiceDate() {
         return serviceDate;
     }
 
@@ -54,7 +54,7 @@ public class VehicleService {
 
         private String serviceID;
         private String serviceDescription;
-        private Date serviceDate;
+        private String serviceDate;
 
 
         public VehicleServiceBuilder serviceID(String serviceID){
@@ -64,7 +64,7 @@ public class VehicleService {
 
         }
 
-        public VehicleServiceBuilder serviceDate(Date serviceDate){
+        public VehicleServiceBuilder serviceDate(String serviceDate){
 
             this.serviceDate = serviceDate;
             return this;
